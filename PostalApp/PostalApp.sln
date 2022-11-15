@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postal.Library", "Parcel.Library\Postal.Library.csproj", "{0028F92E-1D96-432B-9980-A8EDE6D1A3AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postal.Services", "Postal.Services\Postal.Services.csproj", "{36A560AD-D4F3-431E-A6A9-5A8D9CAC1CA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0028F92E-1D96-432B-9980-A8EDE6D1A3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0028F92E-1D96-432B-9980-A8EDE6D1A3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0028F92E-1D96-432B-9980-A8EDE6D1A3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0028F92E-1D96-432B-9980-A8EDE6D1A3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36A560AD-D4F3-431E-A6A9-5A8D9CAC1CA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36A560AD-D4F3-431E-A6A9-5A8D9CAC1CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36A560AD-D4F3-431E-A6A9-5A8D9CAC1CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36A560AD-D4F3-431E-A6A9-5A8D9CAC1CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D1A5C22-2482-4B27-B710-0D0CC10FC57E}
+	EndGlobalSection
+EndGlobal
