@@ -1,12 +1,11 @@
 ﻿using System.Data;
 using Postal.Services.Interfaces;
 using Postal.Library;
-using Postal.Services;
 using Microsoft.Data.SqlClient;
 
 namespace Postal.Services
 {
-    internal class SqlDataConnector : IDataConnection
+    public class SqlDataConnector : IDataConnection
     {
         public List<Parcel> GetParcels()
         {
@@ -30,7 +29,7 @@ namespace Postal.Services
                         {
                             result.Add(new Parcel
                             {
-                                Id = reader.GetByte(0),
+                                Id = reader.GetInt32(0),
                                 UserId = reader.GetInt32(1),
                                 ParcelName = reader.GetString(2),
                                 ParcelDescription = reader.GetString(3),
@@ -137,7 +136,7 @@ namespace Postal.Services
             }
             return result;
         }
-
+       
         public List<User> GetUsers()
         {
             const string sqlExpression = "sp_SelectUsers";
@@ -163,9 +162,10 @@ namespace Postal.Services
                                 UserId = reader.GetInt32(0),
                                 FirstName = reader.GetString(1),
                                 LastName = reader.GetString(2),
-                                Age = reader.GetByte(3),
-                                Email = reader.GetString(4),
-                                PhoneNumber = reader.GetString(5),
+                                FullName = reader.GetString(3),
+                                Age = reader.GetByte(4),
+                                Email = reader.GetString(5),
+                                PhoneNumber = reader.GetString(6),
                             });
                         }
                     }
