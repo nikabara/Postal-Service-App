@@ -55,5 +55,11 @@ namespace PostalApp.UI
         {
 
         }
+
+        private void LoginLinkText_Click(object sender, EventArgs e)
+        {
+            UserLogIn LogIn = new UserLogIn();
+            LogIn.ShowDialog();
+        }
     }
 }

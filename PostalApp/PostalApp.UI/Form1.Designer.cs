@@ -148,6 +148,7 @@
             resources.ApplyResources(this.LoginLinkText, "LoginLinkText");
             this.LoginLinkText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(234)))));
             this.LoginLinkText.Name = "LoginLinkText";
+            this.LoginLinkText.Click += new System.EventHandler(this.LoginLinkText_Click);
             // 
             // panel1
             // 
