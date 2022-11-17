@@ -39,8 +39,8 @@
             this.AgeInput = new System.Windows.Forms.MaskedTextBox();
             this.EmailText = new System.Windows.Forms.Label();
             this.EmailInput = new System.Windows.Forms.MaskedTextBox();
-            this.PhoneNumberText = new System.Windows.Forms.Label();
-            this.PhoneNumberInput = new System.Windows.Forms.MaskedTextBox();
+            this.PasswordText = new System.Windows.Forms.Label();
+            this.PasswordInput = new System.Windows.Forms.MaskedTextBox();
             this.ContinueButton = new System.Windows.Forms.Button();
             this.AlreadyHaveAccText = new System.Windows.Forms.Label();
             this.LoginLinkText = new System.Windows.Forms.Label();
@@ -120,16 +120,16 @@
             resources.ApplyResources(this.EmailInput, "EmailInput");
             this.EmailInput.Name = "EmailInput";
             // 
-            // PhoneNumberText
+            // PasswordText
             // 
-            resources.ApplyResources(this.PhoneNumberText, "PhoneNumberText");
-            this.PhoneNumberText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(50)))), ((int)(((byte)(57)))));
-            this.PhoneNumberText.Name = "PhoneNumberText";
+            resources.ApplyResources(this.PasswordText, "PasswordText");
+            this.PasswordText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(50)))), ((int)(((byte)(57)))));
+            this.PasswordText.Name = "PasswordText";
             // 
-            // PhoneNumberInput
+            // PasswordInput
             // 
-            resources.ApplyResources(this.PhoneNumberInput, "PhoneNumberInput");
-            this.PhoneNumberInput.Name = "PhoneNumberInput";
+            resources.ApplyResources(this.PasswordInput, "PasswordInput");
+            this.PasswordInput.Name = "PasswordInput";
             // 
             // ContinueButton
             // 
@@ -223,8 +223,8 @@
             this.Controls.Add(this.LoginLinkText);
             this.Controls.Add(this.AlreadyHaveAccText);
             this.Controls.Add(this.ContinueButton);
-            this.Controls.Add(this.PhoneNumberInput);
-            this.Controls.Add(this.PhoneNumberText);
+            this.Controls.Add(this.PasswordInput);
+            this.Controls.Add(this.PasswordText);
             this.Controls.Add(this.EmailInput);
             this.Controls.Add(this.EmailText);
             this.Controls.Add(this.AgeInput);
@@ -262,8 +262,8 @@
         private MaskedTextBox AgeInput;
         private Label EmailText;
         private MaskedTextBox EmailInput;
-        private Label PhoneNumberText;
-        private MaskedTextBox PhoneNumberInput;
+        private Label PasswordText;
+        private MaskedTextBox PasswordInput;
         private Button ContinueButton;
         private Label AlreadyHaveAccText;
         private Label LoginLinkText;

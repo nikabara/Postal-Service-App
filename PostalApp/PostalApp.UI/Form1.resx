@@ -130,7 +130,7 @@
     <value>Verdana, 10.2pt</value>
   </data>
   <data name="NameText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 195</value>
+    <value>85, 199</value>
   </data>
   <data name="NameText.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -181,7 +181,7 @@
     <value>Verdana, 10.2pt</value>
   </data>
   <data name="LastNameText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 195</value>
+    <value>282, 199</value>
   </data>
   <data name="LastNameText.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 20</value>
@@ -232,7 +232,7 @@
     <value>Verdana, 10.2pt</value>
   </data>
   <data name="AgeText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 287</value>
+    <value>280, 359</value>
   </data>
   <data name="AgeText.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 20</value>
@@ -256,7 +256,7 @@
     <value>9</value>
   </data>
   <data name="AgeInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 327</value>
+    <value>280, 384</value>
   </data>
   <data name="AgeInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 31</value>
@@ -283,7 +283,7 @@
     <value>Verdana, 10.2pt</value>
   </data>
   <data name="EmailText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 375</value>
+    <value>85, 279</value>
   </data>
   <data name="EmailText.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 20</value>
@@ -307,7 +307,7 @@
     <value>7</value>
   </data>
   <data name="EmailInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 408</value>
+    <value>85, 306</value>
   </data>
   <data name="EmailInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>386, 31</value>
@@ -327,59 +327,59 @@
   <data name="&gt;&gt;EmailInput.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="PhoneNumberText.AutoSize" type="System.Boolean, mscorlib">
+  <data name="PasswordText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="PhoneNumberText.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="PasswordText.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 10.2pt</value>
   </data>
-  <data name="PhoneNumberText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>281, 294</value>
+  <data name="PasswordText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 359</value>
   </data>
-  <data name="PhoneNumberText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 20</value>
+  <data name="PasswordText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 20</value>
   </data>
-  <data name="PhoneNumberText.TabIndex" type="System.Int32, mscorlib">
+  <data name="PasswordText.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="PhoneNumberText.Text" xml:space="preserve">
-    <value>Phone number</value>
+  <data name="PasswordText.Text" xml:space="preserve">
+    <value>Password</value>
   </data>
-  <data name="&gt;&gt;PhoneNumberText.Name" xml:space="preserve">
-    <value>PhoneNumberText</value>
+  <data name="&gt;&gt;PasswordText.Name" xml:space="preserve">
+    <value>PasswordText</value>
   </data>
-  <data name="&gt;&gt;PhoneNumberText.Type" xml:space="preserve">
+  <data name="&gt;&gt;PasswordText.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PhoneNumberText.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PasswordText.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PhoneNumberText.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PasswordText.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="PhoneNumberInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>281, 327</value>
+  <data name="PasswordInput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 384</value>
   </data>
-  <data name="PhoneNumberInput.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PasswordInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 31</value>
   </data>
-  <data name="PhoneNumberInput.TabIndex" type="System.Int32, mscorlib">
+  <data name="PasswordInput.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;PhoneNumberInput.Name" xml:space="preserve">
-    <value>PhoneNumberInput</value>
+  <data name="&gt;&gt;PasswordInput.Name" xml:space="preserve">
+    <value>PasswordInput</value>
   </data>
-  <data name="&gt;&gt;PhoneNumberInput.Type" xml:space="preserve">
+  <data name="&gt;&gt;PasswordInput.Type" xml:space="preserve">
     <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PhoneNumberInput.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PasswordInput.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;PhoneNumberInput.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PasswordInput.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="ContinueButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 475</value>
+    <value>83, 452</value>
   </data>
   <data name="ContinueButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>387, 34</value>
@@ -406,7 +406,7 @@
     <value>True</value>
   </data>
   <data name="AlreadyHaveAccText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 541</value>
+    <value>128, 521</value>
   </data>
   <data name="AlreadyHaveAccText.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 25</value>
@@ -440,7 +440,7 @@
     <value>NoControl</value>
   </data>
   <data name="LoginLinkText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>333, 541</value>
+    <value>333, 521</value>
   </data>
   <data name="LoginLinkText.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 25</value>
@@ -691,7 +691,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 67</value>
+    <value>217, 28</value>
   </data>
   <data name="pictureBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 73</value>
@@ -741,7 +741,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 375</value>
+    <value>211, 366</value>
   </data>
   <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 73</value>
@@ -814,7 +814,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 294</value>
+    <value>71, 294</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 73</value>
@@ -917,7 +917,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 211</value>
+    <value>217, 209</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 73</value>
@@ -976,7 +976,7 @@
 </value>
   </data>
   <data name="UniversalImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 142</value>
+    <value>77, 117</value>
   </data>
   <data name="UniversalImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 73</value>

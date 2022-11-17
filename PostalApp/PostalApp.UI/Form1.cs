@@ -47,7 +47,7 @@ namespace PostalApp.UI
                 LastName = LastNameInput.Text,
                 Age = byte.Parse(AgeInput.Text),
                 Email = EmailInput.Text,
-                PhoneNumber = PhoneNumberInput.Text
+                Password = PasswordInput.Text
             });
         }
 

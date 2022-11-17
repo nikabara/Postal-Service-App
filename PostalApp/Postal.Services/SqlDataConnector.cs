@@ -165,7 +165,7 @@ namespace Postal.Services
                                 FullName = reader.GetString(3),
                                 Age = reader.GetByte(4),
                                 Email = reader.GetString(5),
-                                PhoneNumber = reader.GetString(6),
+                                Password = reader.GetString(6),
                             });
                         }
                     }
@@ -236,7 +236,7 @@ namespace Postal.Services
                     cmd.Parameters.AddWithValue("@LastName", model.LastName);
                     cmd.Parameters.AddWithValue("@Age", model.Age);
                     cmd.Parameters.AddWithValue("@Email", model.Email);
-                    cmd.Parameters.AddWithValue("@PhoneNumber", model.PhoneNumber);
+                    cmd.Parameters.AddWithValue("@Password", model.Password);
 
                     cmd.ExecuteNonQuery();
                 }

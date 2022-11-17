@@ -4,9 +4,7 @@ using Postal.Library;
 using Microsoft.Data.SqlClient;
 using Postal.Services;
 
-SqlDataConnector CSC = new SqlDataConnector();
-
-
+//SqlDataConnector CSC = new SqlDataConnector();
 
 //CSC.InsertUser(new User
 //{
@@ -14,7 +12,7 @@ SqlDataConnector CSC = new SqlDataConnector();
 //    LastName = "გახოკია",
 //    Age = 30,
 //    Email = "marikagakhokia@yahoo.com",
-//    PhoneNumber = "577565421"
+//    Password = "Step2019"
 //});
 
 //Console.WriteLine("Status : ");
