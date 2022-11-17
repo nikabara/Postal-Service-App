@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Postal.Services", "Postal.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Postal.Console", "Postal.Console\Postal.Console.csproj", "{1CBADA87-D969-4C20-9509-7DDCA6090F05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Postal.Application", "Postal.Application\Postal.Application.csproj", "{38EFBF36-72BB-4341-9C02-BE3748DC0E0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostalApp.UI", "PostalApp.UI\PostalApp.UI.csproj", "{76D50AA8-2C50-4E54-A597-4387022006D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{1CBADA87-D969-4C20-9509-7DDCA6090F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CBADA87-D969-4C20-9509-7DDCA6090F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CBADA87-D969-4C20-9509-7DDCA6090F05}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38EFBF36-72BB-4341-9C02-BE3748DC0E0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38EFBF36-72BB-4341-9C02-BE3748DC0E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38EFBF36-72BB-4341-9C02-BE3748DC0E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38EFBF36-72BB-4341-9C02-BE3748DC0E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76D50AA8-2C50-4E54-A597-4387022006D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76D50AA8-2C50-4E54-A597-4387022006D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76D50AA8-2C50-4E54-A597-4387022006D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76D50AA8-2C50-4E54-A597-4387022006D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
