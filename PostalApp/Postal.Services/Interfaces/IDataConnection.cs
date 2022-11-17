@@ -8,5 +8,7 @@ namespace Postal.Services.Interfaces
         public List<Shipping> GetShipping();
         public List<Status> GetStatus();
         public List<User> GetUsers();
+        public Parcel InsertParcel(Parcel model);
+        public User InsertUser(User model);
     }
 }

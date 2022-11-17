@@ -181,5 +181,75 @@ namespace Postal.Services
             }
             return result;
         }
+
+        public Parcel InsertParcel(Parcel model)
+        {
+            const string sqlExpression = "sp_InsertParcelData";
+
+            using (SqlConnection connection = new(GlobalConfig.ConnectionString()))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new(sqlExpression, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@UserId", model.UserId);
+                    cmd.Parameters.AddWithValue("@ParcelName", model.ParcelName);
+                    cmd.Parameters.AddWithValue("@ParcelDescription", model.ParcelDescription);
+                    cmd.Parameters.AddWithValue("@ParcelPrice", model.ParcelPrice);
+                    cmd.Parameters.AddWithValue("@SendDate", model.SendDate);
+                    cmd.Parameters.AddWithValue("@SentFrom", model.SentFrom);
+                    cmd.Parameters.AddWithValue("@SentTo", model.SentTo);
+                    cmd.Parameters.AddWithValue("@StatusId", model.StatusId);
+                    cmd.Parameters.AddWithValue("@ShippingId", model.ShippingId);
+
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return model;
+        }
+
+        public User InsertUser(User model)
+        {
+            const string sqlExpression = "sp_InsertUser";
+
+            using (SqlConnection connection = new SqlConnection(GlobalConfig.ConnectionString()))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new(sqlExpression, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@FirstName", model.FirstName);
+                    cmd.Parameters.AddWithValue("@LastName", model.LastName);
+                    cmd.Parameters.AddWithValue("@Age", model.Age);
+                    cmd.Parameters.AddWithValue("@Email", model.Email);
+                    cmd.Parameters.AddWithValue("@PhoneNumber", model.PhoneNumber);
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return model;
+        }
     }
 }
