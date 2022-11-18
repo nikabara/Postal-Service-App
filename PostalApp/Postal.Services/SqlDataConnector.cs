@@ -136,7 +136,7 @@ namespace Postal.Services
             }
             return result;
         }
-       
+
         public List<User> GetUsers()
         {
             const string sqlExpression = "sp_SelectUsers";
@@ -250,6 +250,101 @@ namespace Postal.Services
                 }
             }
             return model;
+        }
+
+        public List<Parcel> GetAllParcelsPerUser(User model)
+        {
+            const string sqlExpression = "sp_allSpecificUserParcels";
+            List<Parcel> result = new List<Parcel>();
+
+            using (SqlConnection connection = new(GlobalConfig.ConnectionString()))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand cmd = new(sqlExpression, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@UserId", model.UserId);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(new Parcel
+                            {
+                                UserId = reader.GetInt32(1),
+                                ParcelName = reader.GetString(2),
+                                ParcelDescription = reader.GetString(3),
+                                ParcelPrice = reader.GetInt32(4),
+                                SendDate = reader.GetDateTime(5),
+                                SentFrom = reader.GetString(6),
+                                SentTo = reader.GetString(7),
+                                StatusId = reader.GetByte(8),
+                                ShippingId = reader.GetByte(9)
+                            });
+                        }
+                    }
+                }
+                catch (SqlException)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+                return result;
+            }
+        }
+
+        public User GetLoggedInUserInfo(string email, string password)
+        {
+            const string sqlExpression = "sp_GetLoggedInUserData";
+            User result = new User();
+
+            using (SqlConnection connection = new SqlConnection(GlobalConfig.ConnectionString()))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand cmd = new SqlCommand(sqlExpression, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Password", password);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            result.UserId = reader.GetInt32(0);
+                            result.FirstName = reader.GetString(1);
+                            result.LastName = reader.GetString(2);
+                            result.FullName = reader.GetString(3);
+                            result.Age = reader.GetByte(4);
+                            result.Email = reader.GetString(5);
+                            result.Password = reader.GetString(6);
+                        }
+                    }
+                }
+                catch (SqlException)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return result;
         }
     }
 }

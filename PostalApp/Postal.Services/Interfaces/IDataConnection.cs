@@ -10,5 +10,7 @@ namespace Postal.Services.Interfaces
         public List<User> GetUsers();
         public Parcel InsertParcel(Parcel model);
         public User InsertUser(User model);
+        public User GetLoggedInUserInfo(string email, string password);
+        public List<Parcel> GetAllParcelsPerUser(User model);
     }
 }

@@ -4,8 +4,6 @@ using Postal.Library;
 using Microsoft.Data.SqlClient;
 using Postal.Services;
 
-//SqlDataConnector CSC = new SqlDataConnector();
-
 //CSC.InsertUser(new User
 //{
 //    FirstName= "მარიკა",
@@ -59,3 +57,20 @@ using Postal.Services;
 //    StatusId = status_num,
 //    ShippingId = sm_num,
 //});
+
+//var result1 = CSC.GetAllParcelsPerUser(new User
+//{
+//    UserId = 1
+//});
+
+//var result2 = CSC.GetAllParcelsPerUser(new User
+//{
+//    UserId = 3
+//});
+
+//Console.ReadLine();
+
+SqlDataConnector CSC = new SqlDataConnector();
+
+var res = CSC.GetLoggedInUserInfo("baratashvilinick@gmail.com","Step2019");
+Console.ReadLine();
