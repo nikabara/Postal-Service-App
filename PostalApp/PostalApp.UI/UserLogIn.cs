@@ -48,11 +48,26 @@ namespace PostalApp.UI
 
         }
 
+        UserSignUp SignUpForm = new UserSignUp();
         private void SignUpLinkText_Click(object sender, EventArgs e)
         {
-            UserSignUp SignUpForm = new UserSignUp();
             this.Hide();
             SignUpForm.ShowDialog();
+        }
+
+        private void LogInButton_Click(object sender, EventArgs e)
+        {
+            SqlDataConnector sqlDataConnection = new SqlDataConnector();
+
+            var gottenUser = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text);
+
+            if (gottenUser.Email == LogInEmailInput.Text && gottenUser.Password == LogInPasswordInput.Text)
+            {
+                MessageBox.Show("Sucessfully Logged In");
+                PostaAppWindow postalWindow = new PostaAppWindow();
+                this.Hide();
+                postalWindow.Show();
+            }
         }
     }
 }

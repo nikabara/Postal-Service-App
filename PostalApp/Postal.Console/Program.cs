@@ -70,7 +70,28 @@ using Postal.Services;
 
 //Console.ReadLine();
 
-SqlDataConnector CSC = new SqlDataConnector();
+//SqlDataConnector CSC = new SqlDataConnector();
 
-var res = CSC.GetLoggedInUserInfo("baratashvilinick@gmail.com","Step2019");
-Console.ReadLine();
+
+//List<string> strings1 = new() {"nika","baratashvili","nikobar3005@gmail.com","Step2019"};
+//List<string> strings2 = new() {"nika","baratashvili","nikobar3005@gmail.com","Step2019"};
+
+//bool result = strings1.SequenceEqual(strings2);
+
+//string gottenEmail = CSC.GetLoggedInUserInfo("baratashvilinick@gmail.com", "Step2019").Email;
+//string gottenPassword = CSC.GetLoggedInUserInfo("baratashvilinick@gmail.com", "Step2019").Password;
+
+//bool resultat = false;
+//if (gottenEmail == "baratashvilinick@gmail.com" && gottenPassword == "Step2019")
+//{
+//    resultat = true;
+//}
+//else
+//{
+//    resultat = false;
+//}
+
+//Console.ReadKey();
+
+
+

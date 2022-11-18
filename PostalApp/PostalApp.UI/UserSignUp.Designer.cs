@@ -172,7 +172,7 @@
             this.LoginLinkText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LoginLinkText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(234)))));
             this.LoginLinkText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoginLinkText.Location = new System.Drawing.Point(300, 506);
+            this.LoginLinkText.Location = new System.Drawing.Point(319, 506);
             this.LoginLinkText.Name = "LoginLinkText";
             this.LoginLinkText.Size = new System.Drawing.Size(64, 25);
             this.LoginLinkText.TabIndex = 30;
@@ -183,7 +183,7 @@
             // 
             this.AlreadyHaveAccText.AutoSize = true;
             this.AlreadyHaveAccText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AlreadyHaveAccText.Location = new System.Drawing.Point(128, 510);
+            this.AlreadyHaveAccText.Location = new System.Drawing.Point(147, 510);
             this.AlreadyHaveAccText.Name = "AlreadyHaveAccText";
             this.AlreadyHaveAccText.Size = new System.Drawing.Size(178, 20);
             this.AlreadyHaveAccText.TabIndex = 29;
@@ -192,7 +192,7 @@
             // ContinueButton
             // 
             this.ContinueButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ContinueButton.Location = new System.Drawing.Point(83, 441);
+            this.ContinueButton.Location = new System.Drawing.Point(86, 440);
             this.ContinueButton.Name = "ContinueButton";
             this.ContinueButton.Size = new System.Drawing.Size(387, 34);
             this.ContinueButton.TabIndex = 28;
@@ -201,7 +201,7 @@
             // 
             // PasswordInput
             // 
-            this.PasswordInput.Location = new System.Drawing.Point(83, 373);
+            this.PasswordInput.Location = new System.Drawing.Point(85, 371);
             this.PasswordInput.Name = "PasswordInput";
             this.PasswordInput.Size = new System.Drawing.Size(190, 27);
             this.PasswordInput.TabIndex = 27;
@@ -212,7 +212,7 @@
             this.PasswordText.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PasswordText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(50)))), ((int)(((byte)(57)))));
             this.PasswordText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.PasswordText.Location = new System.Drawing.Point(83, 348);
+            this.PasswordText.Location = new System.Drawing.Point(85, 346);
             this.PasswordText.Name = "PasswordText";
             this.PasswordText.Size = new System.Drawing.Size(89, 20);
             this.PasswordText.TabIndex = 26;
@@ -239,7 +239,7 @@
             // 
             // AgeInput
             // 
-            this.AgeInput.Location = new System.Drawing.Point(280, 373);
+            this.AgeInput.Location = new System.Drawing.Point(282, 371);
             this.AgeInput.Name = "AgeInput";
             this.AgeInput.Size = new System.Drawing.Size(191, 27);
             this.AgeInput.TabIndex = 23;
@@ -250,7 +250,7 @@
             this.AgeText.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AgeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(50)))), ((int)(((byte)(57)))));
             this.AgeText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AgeText.Location = new System.Drawing.Point(280, 348);
+            this.AgeText.Location = new System.Drawing.Point(282, 346);
             this.AgeText.Name = "AgeText";
             this.AgeText.Size = new System.Drawing.Size(83, 20);
             this.AgeText.TabIndex = 22;

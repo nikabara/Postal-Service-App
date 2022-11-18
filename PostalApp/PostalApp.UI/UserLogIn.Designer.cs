@@ -96,7 +96,7 @@
             resources.ApplyResources(this.LogInButton, "LogInButton");
             this.LogInButton.Name = "LogInButton";
             this.LogInButton.UseVisualStyleBackColor = true;
-            this.LogInButton.Click += new System.EventHandler(this.button1_Click);
+            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
             // NewHereText
             // 
