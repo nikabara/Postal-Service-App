@@ -34,8 +34,7 @@ namespace PostalApp.UI
 
             if (NameInput.Text != "" && LastNameInput.Text != "" && 
                 AgeInput.Text != "" && EmailInput.Text != "" && PasswordInput.Text != "" && EmailInput.Text.Length > 7 &&
-                EmailInput.Text.Contains('@') || EmailInput.Text.Contains('.') &&
-                DBuser.Email != EmailInput.Text && DBuser.Password != PasswordInput.Text)  
+                EmailInput.Text.Contains('@') || EmailInput.Text.Contains('.'))  
             {
                 connection.InsertUser(new User
                 {
@@ -75,6 +74,21 @@ namespace PostalApp.UI
             {
                 e.Handled = true;
             }
+
+            
+        }
+
+        private void ExitButtonSignUp_MouseHover(object sender, EventArgs e)
+        {
+            ExitButtonSignUp.BackColor = Color.Red;
+        }
+        private void ExitButtonSignUp_MouseLeave(object sender, EventArgs e)
+        {
+            ExitButtonSignUp.BackColor = Color.DarkGray;
+        }
+        private void ExitButtonSignUp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

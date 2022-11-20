@@ -38,6 +38,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.ExitButtonSignUp = new System.Windows.Forms.Button();
             this.LoginLinkText = new System.Windows.Forms.Label();
             this.AlreadyHaveAccText = new System.Windows.Forms.Label();
             this.ContinueButton = new System.Windows.Forms.Button();
@@ -53,12 +54,14 @@
             this.NameText = new System.Windows.Forms.Label();
             this.GetStartedText = new System.Windows.Forms.Label();
             this.WelcomText = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UniversalImage)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,7 +75,7 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(685, -11);
+            this.panel1.Location = new System.Drawing.Point(685, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(347, 624);
             this.panel1.TabIndex = 31;
@@ -81,7 +84,7 @@
             // 
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox4.Location = new System.Drawing.Point(217, 28);
+            this.pictureBox4.Location = new System.Drawing.Point(217, 72);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(71, 73);
             this.pictureBox4.TabIndex = 7;
@@ -91,7 +94,7 @@
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox3.Location = new System.Drawing.Point(211, 366);
+            this.pictureBox3.Location = new System.Drawing.Point(211, 410);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(77, 73);
             this.pictureBox3.TabIndex = 6;
@@ -101,7 +104,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(71, 294);
+            this.pictureBox2.Location = new System.Drawing.Point(71, 338);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(77, 73);
             this.pictureBox2.TabIndex = 5;
@@ -111,7 +114,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(217, 209);
+            this.pictureBox1.Location = new System.Drawing.Point(217, 253);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 73);
             this.pictureBox1.TabIndex = 4;
@@ -121,7 +124,7 @@
             // 
             this.UniversalImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UniversalImage.BackgroundImage")));
             this.UniversalImage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.UniversalImage.Location = new System.Drawing.Point(77, 117);
+            this.UniversalImage.Location = new System.Drawing.Point(77, 161);
             this.UniversalImage.Name = "UniversalImage";
             this.UniversalImage.Size = new System.Drawing.Size(71, 73);
             this.UniversalImage.TabIndex = 3;
@@ -166,13 +169,31 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Trusted by over";
             // 
+            // ExitButtonSignUp
+            // 
+            this.ExitButtonSignUp.BackColor = System.Drawing.Color.DarkGray;
+            this.ExitButtonSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitButtonSignUp.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExitButtonSignUp.FlatAppearance.BorderSize = 0;
+            this.ExitButtonSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButtonSignUp.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.ExitButtonSignUp.Location = new System.Drawing.Point(1003, 0);
+            this.ExitButtonSignUp.Name = "ExitButtonSignUp";
+            this.ExitButtonSignUp.Size = new System.Drawing.Size(30, 31);
+            this.ExitButtonSignUp.TabIndex = 8;
+            this.ExitButtonSignUp.Text = "X";
+            this.ExitButtonSignUp.UseVisualStyleBackColor = false;
+            this.ExitButtonSignUp.Click += new System.EventHandler(this.ExitButtonSignUp_Click);
+            this.ExitButtonSignUp.MouseLeave += new System.EventHandler(this.ExitButtonSignUp_MouseLeave);
+            this.ExitButtonSignUp.MouseHover += new System.EventHandler(this.ExitButtonSignUp_MouseHover);
+            // 
             // LoginLinkText
             // 
             this.LoginLinkText.AutoSize = true;
             this.LoginLinkText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LoginLinkText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(234)))));
             this.LoginLinkText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoginLinkText.Location = new System.Drawing.Point(319, 506);
+            this.LoginLinkText.Location = new System.Drawing.Point(319, 516);
             this.LoginLinkText.Name = "LoginLinkText";
             this.LoginLinkText.Size = new System.Drawing.Size(64, 25);
             this.LoginLinkText.TabIndex = 30;
@@ -183,7 +204,7 @@
             // 
             this.AlreadyHaveAccText.AutoSize = true;
             this.AlreadyHaveAccText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AlreadyHaveAccText.Location = new System.Drawing.Point(147, 510);
+            this.AlreadyHaveAccText.Location = new System.Drawing.Point(147, 520);
             this.AlreadyHaveAccText.Name = "AlreadyHaveAccText";
             this.AlreadyHaveAccText.Size = new System.Drawing.Size(178, 20);
             this.AlreadyHaveAccText.TabIndex = 29;
@@ -192,7 +213,7 @@
             // ContinueButton
             // 
             this.ContinueButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ContinueButton.Location = new System.Drawing.Point(86, 440);
+            this.ContinueButton.Location = new System.Drawing.Point(86, 450);
             this.ContinueButton.Name = "ContinueButton";
             this.ContinueButton.Size = new System.Drawing.Size(387, 34);
             this.ContinueButton.TabIndex = 28;
@@ -202,7 +223,7 @@
             // 
             // PasswordInput
             // 
-            this.PasswordInput.Location = new System.Drawing.Point(85, 371);
+            this.PasswordInput.Location = new System.Drawing.Point(85, 381);
             this.PasswordInput.Name = "PasswordInput";
             this.PasswordInput.Size = new System.Drawing.Size(190, 27);
             this.PasswordInput.TabIndex = 27;
@@ -213,7 +234,7 @@
             this.PasswordText.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PasswordText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(50)))), ((int)(((byte)(57)))));
             this.PasswordText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.PasswordText.Location = new System.Drawing.Point(85, 346);
+            this.PasswordText.Location = new System.Drawing.Point(85, 356);
             this.PasswordText.Name = "PasswordText";
             this.PasswordText.Size = new System.Drawing.Size(89, 20);
             this.PasswordText.TabIndex = 26;
@@ -221,7 +242,7 @@
             // 
             // EmailInput
             // 
-            this.EmailInput.Location = new System.Drawing.Point(85, 295);
+            this.EmailInput.Location = new System.Drawing.Point(85, 305);
             this.EmailInput.Name = "EmailInput";
             this.EmailInput.Size = new System.Drawing.Size(386, 27);
             this.EmailInput.TabIndex = 25;
@@ -232,7 +253,7 @@
             this.EmailText.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EmailText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(50)))), ((int)(((byte)(57)))));
             this.EmailText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.EmailText.Location = new System.Drawing.Point(85, 268);
+            this.EmailText.Location = new System.Drawing.Point(85, 278);
             this.EmailText.Name = "EmailText";
             this.EmailText.Size = new System.Drawing.Size(57, 20);
             this.EmailText.TabIndex = 24;
@@ -240,7 +261,7 @@
             // 
             // AgeInput
             // 
-            this.AgeInput.Location = new System.Drawing.Point(282, 371);
+            this.AgeInput.Location = new System.Drawing.Point(282, 381);
             this.AgeInput.Name = "AgeInput";
             this.AgeInput.Size = new System.Drawing.Size(191, 27);
             this.AgeInput.TabIndex = 23;
@@ -252,7 +273,7 @@
             this.AgeText.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AgeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(50)))), ((int)(((byte)(57)))));
             this.AgeText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.AgeText.Location = new System.Drawing.Point(282, 346);
+            this.AgeText.Location = new System.Drawing.Point(282, 356);
             this.AgeText.Name = "AgeText";
             this.AgeText.Size = new System.Drawing.Size(83, 20);
             this.AgeText.TabIndex = 22;
@@ -260,7 +281,7 @@
             // 
             // LastNameInput
             // 
-            this.LastNameInput.Location = new System.Drawing.Point(282, 220);
+            this.LastNameInput.Location = new System.Drawing.Point(282, 230);
             this.LastNameInput.Name = "LastNameInput";
             this.LastNameInput.Size = new System.Drawing.Size(190, 27);
             this.LastNameInput.TabIndex = 21;
@@ -271,7 +292,7 @@
             this.LastNameText.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LastNameText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(50)))), ((int)(((byte)(57)))));
             this.LastNameText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LastNameText.Location = new System.Drawing.Point(282, 188);
+            this.LastNameText.Location = new System.Drawing.Point(282, 198);
             this.LastNameText.Name = "LastNameText";
             this.LastNameText.Size = new System.Drawing.Size(139, 20);
             this.LastNameText.TabIndex = 20;
@@ -279,7 +300,7 @@
             // 
             // NameInput
             // 
-            this.NameInput.Location = new System.Drawing.Point(86, 220);
+            this.NameInput.Location = new System.Drawing.Point(86, 230);
             this.NameInput.Name = "NameInput";
             this.NameInput.Size = new System.Drawing.Size(190, 27);
             this.NameInput.TabIndex = 19;
@@ -290,7 +311,7 @@
             this.NameText.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NameText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(50)))), ((int)(((byte)(57)))));
             this.NameText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.NameText.Location = new System.Drawing.Point(85, 188);
+            this.NameText.Location = new System.Drawing.Point(85, 198);
             this.NameText.Name = "NameText";
             this.NameText.Size = new System.Drawing.Size(100, 20);
             this.NameText.TabIndex = 18;
@@ -302,7 +323,7 @@
             this.GetStartedText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.GetStartedText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
             this.GetStartedText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.GetStartedText.Location = new System.Drawing.Point(86, 106);
+            this.GetStartedText.Location = new System.Drawing.Point(86, 116);
             this.GetStartedText.Name = "GetStartedText";
             this.GetStartedText.Size = new System.Drawing.Size(385, 25);
             this.GetStartedText.TabIndex = 17;
@@ -314,18 +335,28 @@
             this.WelcomText.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.WelcomText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.WelcomText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.WelcomText.Location = new System.Drawing.Point(86, 56);
+            this.WelcomText.Location = new System.Drawing.Point(86, 66);
             this.WelcomText.Margin = new System.Windows.Forms.Padding(0);
             this.WelcomText.Name = "WelcomText";
             this.WelcomText.Size = new System.Drawing.Size(311, 34);
             this.WelcomText.TabIndex = 16;
             this.WelcomText.Text = "Welcome to Parcel";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.ExitButtonSignUp);
+            this.panel2.Location = new System.Drawing.Point(-1, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1033, 31);
+            this.panel2.TabIndex = 32;
+            // 
             // UserSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 603);
+            this.ClientSize = new System.Drawing.Size(1032, 623);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LoginLinkText);
             this.Controls.Add(this.AlreadyHaveAccText);
@@ -342,7 +373,7 @@
             this.Controls.Add(this.NameText);
             this.Controls.Add(this.GetStartedText);
             this.Controls.Add(this.WelcomText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserLogIn";
@@ -353,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UniversalImage)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +416,7 @@
         private Label NameText;
         private Label GetStartedText;
         private Label WelcomText;
+        private Button ExitButtonSignUp;
+        private Panel panel2;
     }
 }

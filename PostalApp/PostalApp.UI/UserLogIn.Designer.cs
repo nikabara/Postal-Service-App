@@ -47,12 +47,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.ExitButtonLogIn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UniversalImage)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // WelcomBackText
@@ -90,6 +93,7 @@
             // 
             resources.ApplyResources(this.LogInPasswordInput, "LogInPasswordInput");
             this.LogInPasswordInput.Name = "LogInPasswordInput";
+            this.LogInPasswordInput.PasswordChar = '*';
             // 
             // LogInButton
             // 
@@ -176,10 +180,30 @@
             this.label7.Name = "label7";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // ExitButtonLogIn
+            // 
+            this.ExitButtonLogIn.BackColor = System.Drawing.Color.DarkGray;
+            this.ExitButtonLogIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.ExitButtonLogIn, "ExitButtonLogIn");
+            this.ExitButtonLogIn.FlatAppearance.BorderSize = 0;
+            this.ExitButtonLogIn.Name = "ExitButtonLogIn";
+            this.ExitButtonLogIn.UseVisualStyleBackColor = false;
+            this.ExitButtonLogIn.Click += new System.EventHandler(this.ExitButtonLogIn_Click);
+            this.ExitButtonLogIn.MouseLeave += new System.EventHandler(this.ExitButtonLogIn_MouseLeave);
+            this.ExitButtonLogIn.MouseHover += new System.EventHandler(this.ExitButtonLogIn_MouseHover);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.ExitButtonLogIn);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
             // LogInForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.SignUpLinkText);
             this.Controls.Add(this.NewHereText);
@@ -190,7 +214,7 @@
             this.Controls.Add(this.LogInEmailText);
             this.Controls.Add(this.LogInFillForm);
             this.Controls.Add(this.WelcomBackText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LogInForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -200,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UniversalImage)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +250,7 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private Button ExitButtonLogIn;
+        private Panel panel2;
     }
 }
