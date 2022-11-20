@@ -58,15 +58,21 @@ namespace PostalApp.UI
         private void LogInButton_Click(object sender, EventArgs e)
         {
             SqlDataConnector sqlDataConnection = new SqlDataConnector();
+            UserSignUp signUpWindow = new UserSignUp();
 
             var gottenUser = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text);
 
             if (gottenUser.Email == LogInEmailInput.Text && gottenUser.Password == LogInPasswordInput.Text)
             {
-                MessageBox.Show("Sucessfully Logged In");
+                MessageBox.Show("Sucessfully Logged In","Operation successful", MessageBoxButtons.OK,MessageBoxIcon.None);
                 PostaAppWindow postalWindow = new PostaAppWindow();
                 this.Hide();
+                signUpWindow.Hide();
                 postalWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error logging you in", "Operation unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

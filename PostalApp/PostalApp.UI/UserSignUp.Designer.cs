@@ -198,6 +198,7 @@
             this.ContinueButton.TabIndex = 28;
             this.ContinueButton.Text = "Continue";
             this.ContinueButton.UseVisualStyleBackColor = true;
+            this.ContinueButton.Click += new System.EventHandler(this.ContinueButton_Click);
             // 
             // PasswordInput
             // 
@@ -243,6 +244,7 @@
             this.AgeInput.Name = "AgeInput";
             this.AgeInput.Size = new System.Drawing.Size(191, 27);
             this.AgeInput.TabIndex = 23;
+            this.AgeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AgeInput_KeyPress);
             // 
             // AgeText
             // 

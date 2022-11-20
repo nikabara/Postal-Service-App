@@ -151,7 +151,7 @@ namespace Postal.Services
                     SqlCommand cmd = new(sqlExpression, connection);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    SqlDataReader reader = cmd.ExecuteReader();
+                    SqlDataReader reader = cmd.ExecuteReader(); // invalid name phonenumber in sql procedure
 
                     if (reader.HasRows)
                     {

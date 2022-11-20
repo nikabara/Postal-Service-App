@@ -94,4 +94,36 @@ using Postal.Services;
 //Console.ReadKey();
 
 
+//SqlDataConnector sqlCon = new SqlDataConnector();
+
+//List<User> myUser = new List<User>()
+//{
+//    new User()
+//    {
+//        UserId = 1,
+//        FirstName = "ნიკა",
+//        LastName = "ბარათაშვილი",
+//        FullName = $"ნიკა ბარათაშვილი",
+//        Age = 15,
+//        Email = "baratashvilinick@gmail.com",
+//        Password = "Step2019"
+//    },
+//    new User()
+//    {
+//        UserId = 3,
+//        FirstName = "marika",
+//        LastName = "gaxokia",
+//        FullName = $"marika gaxokia",
+//        Age = 45,
+//        Email = "marikagaxokia@gmail.com",
+//        Password = "skdfjd55"
+//    }
+//};
+
+//var gottenUser = sqlCon.GetUsers();
+
+//bool equal = gottenUser.Equals(myUser);
+
+
+Console.ReadKey();
 
