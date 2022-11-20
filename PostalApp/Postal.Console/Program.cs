@@ -124,6 +124,17 @@ using Postal.Services;
 
 //bool equal = gottenUser.Equals(myUser);
 
+SqlDataConnector sqlCon = new SqlDataConnector();
+
+var res = sqlCon.IfUserExists(new User
+{
+    FirstName = "nick",
+    LastName = "zurashvili",
+    Age = 14,
+    Email = "zurashvilinick@gmail.com",
+    Password = "Zura2019"
+});
+
 
 Console.ReadKey();
 

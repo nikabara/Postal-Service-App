@@ -9,5 +9,8 @@
         public byte Age { get; set; }
         public string? Email { get; set; }
         public string? Password { get; set; }
+
+        public override bool Equals(object obj) => new UserEqualityComparer().Equals(obj);
+        public override int GetHashCode() => new UserEqualityComparer().GetHashCode();
     }
 }

@@ -346,5 +346,58 @@ namespace Postal.Services
             }
             return result;
         }
+
+        public bool IfUserExists(User model)
+        {
+            const string sqlExpression = "sp_SelectExactUser";
+            User userResult = new User();
+
+            using (SqlConnection connection = new SqlConnection(GlobalConfig.ConnectionString()))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand cmd = new SqlCommand(sqlExpression, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@FirstName", model.FirstName);
+                    cmd.Parameters.AddWithValue("@LastName", model.LastName);
+                    cmd.Parameters.AddWithValue("@Age", model.Age);
+                    cmd.Parameters.AddWithValue("@Email", model.Email);
+                    cmd.Parameters.AddWithValue("@Password", model.Password);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            userResult.FirstName = reader.GetString(1);
+                            userResult.LastName = reader.GetString(2);
+                            userResult.Age = reader.GetByte(4);
+                            userResult.Email = reader.GetString(5);
+                            userResult.Password = reader.GetString(6);
+                        }
+                    }
+                    if (Equals(model,userResult))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch (SqlException)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
     }
 }
