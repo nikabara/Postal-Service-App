@@ -7,6 +7,17 @@ namespace Postal.Services
 {
     public class SqlDataConnector : IDataConnection
     {
+        public bool Equal(User x, User y)
+        {
+            if (x.UserId == y.UserId && x.FirstName == y.FirstName && x.LastName == y.LastName && x.FullName == y.FullName && x.Email == y.Email && x.Password == y.Password)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public List<Parcel> GetParcels()
         {
             const string sqlExpression = "sp_SelectParcels";
@@ -347,7 +358,7 @@ namespace Postal.Services
             return result;
         }
 
-        public bool IfUserExists(User model)
+        public User GetSelectedUser(User model)
         {
             const string sqlExpression = "sp_SelectExactUser";
             User userResult = new User();
@@ -373,20 +384,14 @@ namespace Postal.Services
                     {
                         while (reader.Read())
                         {
+                            userResult.UserId = reader.GetInt32(0);
                             userResult.FirstName = reader.GetString(1);
                             userResult.LastName = reader.GetString(2);
+                            userResult.FullName = reader.GetString(3);
                             userResult.Age = reader.GetByte(4);
                             userResult.Email = reader.GetString(5);
                             userResult.Password = reader.GetString(6);
                         }
-                    }
-                    if (Equals(model,userResult))
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
                     }
                 }
                 catch (SqlException)
@@ -398,6 +403,51 @@ namespace Postal.Services
                     connection.Close();
                 }
             }
+            return userResult;
+        }
+
+        public List<User> GetBasicUser()
+        {
+            const string sqlExpression = "sp_SelectBasicUser";
+
+            List<User> result = new List<User>();
+
+            using (SqlConnection connection = new(GlobalConfig.ConnectionString()))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand cmd = new(sqlExpression, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataReader reader = cmd.ExecuteReader(); // invalid name phonenumber in sql procedure
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(new User
+                            {
+                                FirstName = reader.GetString(0),
+                                LastName = reader.GetString(1),
+                                Age = reader.GetByte(2),
+                                Email = reader.GetString(3),
+                                Password = reader.GetString(4),
+                            });
+                        }
+                    }
+                }
+                catch (SqlException)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return result;
         }
     }
 }

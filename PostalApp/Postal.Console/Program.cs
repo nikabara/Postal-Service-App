@@ -120,21 +120,21 @@ using Postal.Services;
 //    }
 //};
 
+var mynewuser = new User
+{
+    FirstName = "ნიკა",
+    LastName = "ბარათაშვილი",
+    Age = 15,
+    Email = "baratashvilinick@gmail.com",
+    Password = "Step2019"
+};
+
 //var gottenUser = sqlCon.GetUsers();
 
 //bool equal = gottenUser.Equals(myUser);
 
 SqlDataConnector sqlCon = new SqlDataConnector();
 
-var res = sqlCon.IfUserExists(new User
-{
-    FirstName = "nick",
-    LastName = "zurashvili",
-    Age = 14,
-    Email = "zurashvilinick@gmail.com",
-    Password = "Zura2019"
-});
-
+bool ifEquals = sqlCon.GetBasicUser().Any(x => sqlCon.Equal(x, mynewuser));
 
 Console.ReadKey();
-
