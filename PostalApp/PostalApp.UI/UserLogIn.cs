@@ -72,6 +72,8 @@ namespace PostalApp.UI
             }
             else
             {
+                LogInEmailInput.ResetText();
+                LogInPasswordInput.ResetText();
                 MessageBox.Show("Error logging you in", "Operation unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

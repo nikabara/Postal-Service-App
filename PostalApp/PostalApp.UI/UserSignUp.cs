@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Postal.Services;
 using Postal.Library;
+using Microsoft.VisualBasic.ApplicationServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PostalApp.UI
 {
@@ -30,34 +32,49 @@ namespace PostalApp.UI
         private void ContinueButton_Click(object sender, EventArgs e)
         {
 
-            var DBuser = connection.GetLoggedInUserInfo(EmailInput.Text,PasswordInput.Text);
+            var myUser = new Postal.Library.User
+            {
+                FirstName = NameInput.Text,
+                LastName = LastNameInput.Text,
+                Age = byte.Parse(AgeInput.Text),
+                Email = EmailInput.Text,
+                Password = PasswordInput.Text,
+            };
 
-            if (NameInput.Text != "" && LastNameInput.Text != "" && 
-                AgeInput.Text != "" && EmailInput.Text != "" && PasswordInput.Text != "" && EmailInput.Text.Length > 7 &&
-                EmailInput.Text.Contains('@') || EmailInput.Text.Contains('.'))  
+            if (!connection.GetBasicUser().Any(x => connection.Equal(x, myUser)))
             {
-                connection.InsertUser(new User
+                if (NameInput.Text != "" && LastNameInput.Text != "" &&
+                    AgeInput.Text != "" && EmailInput.Text != "" && PasswordInput.Text != "" && EmailInput.Text.Length > 7 &&
+                    EmailInput.Text.Contains('@') || EmailInput.Text.Contains('.'))
                 {
-                    FirstName = NameInput.Text,
-                    LastName = LastNameInput.Text,
-                    Age = byte.Parse(AgeInput.Text),
-                    Email = EmailInput.Text,
-                    Password = PasswordInput.Text,
-                });
+                    connection.InsertUser(new Postal.Library.User
+                    {
+                        FirstName = NameInput.Text,
+                        LastName = LastNameInput.Text,
+                        Age = byte.Parse(AgeInput.Text),
+                        Email = EmailInput.Text,
+                        Password = PasswordInput.Text,
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("Please fill out all the forms",
+                        "Operation unsuccessful",
+                            MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                }
             }
-            else if (DBuser.Email == EmailInput.Text && DBuser.Password == PasswordInput.Text)
+            else if (connection.GetBasicUser().Any(x => connection.Equal(x, myUser)))
             {
+                NameInput.ResetText();
+                LastNameInput.ResetText();
+                AgeInput.ResetText();
+                EmailInput.ResetText();
+                PasswordInput.ResetText();
                 MessageBox.Show("User with this credentials already exist",
                         "Operation unsuccessful",
                             MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                MessageBox.Show("Please fill out all the forms",
-                    "Operation unsuccessful", 
-                        MessageBoxButtons.OK, 
-                            MessageBoxIcon.Error);
             }
         }
 
@@ -74,8 +91,6 @@ namespace PostalApp.UI
             {
                 e.Handled = true;
             }
-
-            
         }
 
         private void ExitButtonSignUp_MouseHover(object sender, EventArgs e)
