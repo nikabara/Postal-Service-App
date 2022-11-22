@@ -31,21 +31,18 @@ namespace PostalApp.UI
         SqlDataConnector connection = new SqlDataConnector();
         private void ContinueButton_Click(object sender, EventArgs e)
         {
-
-            var myUser = new Postal.Library.User
+            if (NameInput.Text != "" && LastNameInput.Text != "" && AgeInput.Text != "" && EmailInput.Text != "" && PasswordInput.Text != "" && EmailInput.Text.Length > 7 && EmailInput.Text.Contains('@') == true || EmailInput.Text.Contains('.') == true &&
+                byte.Parse(AgeInput.Text) >= 15 && byte.Parse(AgeInput.Text) <= 120)
             {
-                FirstName = NameInput.Text,
-                LastName = LastNameInput.Text,
-                Age = byte.Parse(AgeInput.Text),
-                Email = EmailInput.Text,
-                Password = PasswordInput.Text,
-            };
-
-            if (!connection.GetBasicUser().Any(x => connection.Equal(x, myUser)))
-            {
-                if (NameInput.Text != "" && LastNameInput.Text != "" &&
-                    AgeInput.Text != "" && EmailInput.Text != "" && PasswordInput.Text != "" && EmailInput.Text.Length > 7 &&
-                    EmailInput.Text.Contains('@') || EmailInput.Text.Contains('.'))
+                var myUser = new Postal.Library.User
+                {
+                    FirstName = NameInput.Text,
+                    LastName = LastNameInput.Text,
+                    Age = byte.Parse(AgeInput.Text),
+                    Email = EmailInput.Text,
+                    Password = PasswordInput.Text,
+                };
+                if (!connection.GetBasicUser().Any(x => connection.Equal(x, myUser)))
                 {
                     connection.InsertUser(new Postal.Library.User
                     {
@@ -56,25 +53,61 @@ namespace PostalApp.UI
                         Password = PasswordInput.Text,
                     });
                 }
-                else
+                else if (connection.GetBasicUser().Any(x => connection.Equal(x, myUser)))
                 {
-                    MessageBox.Show("Please fill out all the forms",
-                        "Operation unsuccessful",
-                            MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                    NameInput.ResetText();
+                    LastNameInput.ResetText();
+                    AgeInput.ResetText();
+                    EmailInput.ResetText();
+                    PasswordInput.ResetText();
+                    MessageBox.Show("User with this credentials already exist",
+                            "Operation unsuccessful",
+                                MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
                 }
             }
-            else if (connection.GetBasicUser().Any(x => connection.Equal(x, myUser)))
+            else if (NameInput.Text == "" && LastNameInput.Text == "" &&
+                AgeInput.Text == "" && EmailInput.Text == "" && PasswordInput.Text == "")
             {
-                NameInput.ResetText();
-                LastNameInput.ResetText();
-                AgeInput.ResetText();
-                EmailInput.ResetText();
-                PasswordInput.ResetText();
-                MessageBox.Show("User with this credentials already exist",
-                        "Operation unsuccessful",
-                            MessageBoxButtons.OK,
-                                MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please fill out all the forms",
+                    "Operation unsuccessful",
+                        MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+            }
+            else if (EmailInput.Text.Length < 7 || EmailInput.Text.Length > 50)
+            {
+                MessageBox.Show("Email length must be at least 7 characcters and maximum 49",
+                    "Operation unsuccessful",
+                        MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+            }
+            else if (EmailInput.Text.Contains('@') == false || EmailInput.Text.Contains('.') == false)
+            {
+                MessageBox.Show("Email must contain '@' and '.'",
+                    "Operation unsuccessful",
+                        MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+            }
+            else if (PasswordInput.Text.Length < 4 || PasswordInput.Text.Length >= 10)
+            {
+                MessageBox.Show("Password must be more than 4 and less than 10 characters",
+                    "Operation unsuccessful",
+                        MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+            }
+            else if (byte.Parse(AgeInput.Text) < 15)
+            {
+                MessageBox.Show("You're not old enough",
+                    "Operation unsuccessful",
+                        MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+            }
+            else if (byte.Parse(AgeInput.Text) > 120)
+            {
+                MessageBox.Show("Age is too big",
+                    "Operation unsuccessful",
+                        MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
             }
         }
 

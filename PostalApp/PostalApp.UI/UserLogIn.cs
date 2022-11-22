@@ -92,5 +92,12 @@ namespace PostalApp.UI
         {
             ExitButtonLogIn.BackColor = Color.DarkGray;
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            PostaAppWindow newappwindow = new();
+            newappwindow.Show();
+        }
     }
 }

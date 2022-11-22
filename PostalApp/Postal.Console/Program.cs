@@ -3,6 +3,7 @@ using Postal.Services.Interfaces;
 using Postal.Library;
 using Microsoft.Data.SqlClient;
 using Postal.Services;
+using System.Text.RegularExpressions;
 
 //CSC.InsertUser(new User
 //{
@@ -120,21 +121,23 @@ using Postal.Services;
 //    }
 //};
 
-var mynewuser = new User
-{
-    FirstName = "ნიკა",
-    LastName = "ბარათაშვილი",
-    Age = 15,
-    Email = "baratashvilinick@gmail.com",
-    Password = "Step2019"
-};
+//var mynewuser = new User
+//{
+//    FirstName = "ნიკა",
+//    LastName = "ბარათაშვილი",
+//    Age = 15,
+//    Email = "baratashvilinick@gmail.com",
+//    Password = "Step2019"
+//};
 
-//var gottenUser = sqlCon.GetUsers();
+////var gottenUser = sqlCon.GetUsers();
 
-//bool equal = gottenUser.Equals(myUser);
+////bool equal = gottenUser.Equals(myUser);
 
-SqlDataConnector sqlCon = new SqlDataConnector();
+//SqlDataConnector sqlCon = new SqlDataConnector();
 
-bool ifEquals = sqlCon.GetBasicUser().Any(x => sqlCon.Equal(x, mynewuser));
+//bool ifEquals = sqlCon.GetBasicUser().Any(x => sqlCon.Equal(x, mynewuser));
+
+
 
 Console.ReadKey();

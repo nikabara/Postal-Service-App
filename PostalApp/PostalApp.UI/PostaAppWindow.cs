@@ -31,5 +31,15 @@ namespace PostalApp.UI
         {
             MainExitButton.BackColor = Color.DarkGray;
         }
+
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void SearchBar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
