@@ -54,8 +54,7 @@ namespace PostalApp.UI
             this.Hide();
             SignUpForm.Show();
         }
-
-        private void LogInButton_Click(object sender, EventArgs e)
+        public void LogInButton_Click(object sender, EventArgs e)
         {
             SqlDataConnector sqlDataConnection = new SqlDataConnector();
             UserSignUp signUpWindow = new UserSignUp();
@@ -65,6 +64,12 @@ namespace PostalApp.UI
 
             if (gottenUser.Email == LogInEmailInput.Text && gottenUser.Password == LogInPasswordInput.Text)
             {
+                loggedInUser = new User()
+                {
+                    Email = LogInEmailInput.Text,
+                    Password = LogInPasswordInput.Text
+                };
+
                 MessageBox.Show("Sucessfully Logged In","Operation successful", MessageBoxButtons.OK,MessageBoxIcon.None);
                 this.Hide();
                 signUpWindow.Hide();
