@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Postal.Library;
 
 namespace PostalApp.UI
 {
     public partial class PostaAppWindow : Form
     {
-        public PostaAppWindow()
+        public User? gottenUser { get; set; }
+        public PostaAppWindow(User? gottenUser)
         {
             InitializeComponent();
+            this.gottenUser = gottenUser;
         }
 
         private void MainExitButton_Click(object sender, EventArgs e)
@@ -37,7 +31,18 @@ namespace PostalApp.UI
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void PostaAppWindow_Load(object sender, EventArgs e)
+        {
+            NameText.Text = $"{gottenUser.FirstName} {gottenUser.LastName}";
+            EmailText.Text = gottenUser.Email;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

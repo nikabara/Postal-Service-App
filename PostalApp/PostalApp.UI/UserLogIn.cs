@@ -49,6 +49,8 @@ namespace PostalApp.UI
         }
 
         UserSignUp SignUpForm = new UserSignUp();
+        SqlDataConnector sqlDataConnection = new SqlDataConnector();
+        UserSignUp signUpWindow = new UserSignUp();
         private void SignUpLinkText_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -56,20 +58,18 @@ namespace PostalApp.UI
         }
         public void LogInButton_Click(object sender, EventArgs e)
         {
-            SqlDataConnector sqlDataConnection = new SqlDataConnector();
-            UserSignUp signUpWindow = new UserSignUp();
-            PostaAppWindow mainAppWindow = new PostaAppWindow();
+            User? ahh = new User
+            {
+                FirstName = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).FirstName,
+                LastName = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).LastName,
+                Email = LogInEmailInput.Text
+            };
+            PostaAppWindow mainAppWindow = new PostaAppWindow(ahh);
 
             var gottenUser = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text);
 
             if (gottenUser.Email == LogInEmailInput.Text && gottenUser.Password == LogInPasswordInput.Text)
             {
-                loggedInUser = new User()
-                {
-                    Email = LogInEmailInput.Text,
-                    Password = LogInPasswordInput.Text
-                };
-
                 MessageBox.Show("Sucessfully Logged In","Operation successful", MessageBoxButtons.OK,MessageBoxIcon.None);
                 this.Hide();
                 signUpWindow.Hide();
@@ -100,9 +100,8 @@ namespace PostalApp.UI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            PostaAppWindow newappwindow = new();
-            newappwindow.Show();
+            //this.Hide();
+            //mainAppWindow.Show();
         }
     }
 }
