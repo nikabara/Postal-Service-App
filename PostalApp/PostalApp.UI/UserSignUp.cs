@@ -11,6 +11,9 @@ using Postal.Services;
 using Postal.Library;
 using Microsoft.VisualBasic.ApplicationServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Text.RegularExpressions;
+using Microsoft.VisualBasic.Devices;
+using PostalApp.UI;
 
 namespace PostalApp.UI
 {
@@ -31,8 +34,9 @@ namespace PostalApp.UI
         SqlDataConnector connection = new SqlDataConnector();
         private void ContinueButton_Click(object sender, EventArgs e)
         {
-            if (NameInput.Text != "" && LastNameInput.Text != "" && AgeInput.Text != "" && EmailInput.Text != "" && PasswordInput.Text != "" && EmailInput.Text.Length > 7 && EmailInput.Text.Contains('@') == true || EmailInput.Text.Contains('.') == true &&
-                AgeInput.Text != "" && byte.Parse(AgeInput.Text) >= 15 && byte.Parse(AgeInput.Text) <= 120)
+            if (NameInput.Text != string.Empty && LastNameInput.Text != string.Empty && EmailInput.Text != string.Empty && PasswordInput.Text != string.Empty && AgeInput.Text != string.Empty &&
+                NameInput.Text.Length < 30 && LastNameInput.Text.Length < 35 && EmailInput.Text.Length > 7 && EmailInput.Text.Length < 50 && EmailInput.Text.Contains('@') && EmailInput.Text.Contains('.') && 
+                PasswordInput.Text.Length > 4 && PasswordInput.Text.Length < 10 && byte.Parse(AgeInput.Text) >= 15 && byte.Parse(AgeInput.Text) <= 120 && Regex.IsMatch(PasswordInput.Text, @"^(?=.*[a-zA-Z])(?=.*[0-9])"))
             {
                 var myUser = new Postal.Library.User
                 {
@@ -69,59 +73,66 @@ namespace PostalApp.UI
                 this.Close();
                 mainAppWindow.Show();
             }
-            else if (NameInput.Text == "" && LastNameInput.Text == "" &&
-                AgeInput.Text == "" && EmailInput.Text == "" && PasswordInput.Text == "")
+            else if (NameInput.Text == string.Empty || LastNameInput.Text == string.Empty || EmailInput.Text == string.Empty || PasswordInput.Text == string.Empty || AgeInput.Text == string.Empty)
             {
-                MessageBox.Show("Please fill out all the forms",
+                MessageBox.Show("Please fill all out all the forms",
                     "Operation unsuccessful",
                         MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
             }
-            else if (EmailInput.Text.Length < 7 || EmailInput.Text.Length > 50)
+            else if (!Regex.IsMatch(PasswordInput.Text, @"^(?=.*[a-zA-Z])(?=.*[0-9])"))
             {
-                MessageBox.Show("Email length must be at least 7 characcters and maximum 49",
+                MessageBox.Show("Password must contain at least one number from 0 to 9 and letters from a to z",
+                        "Operation unsuccessful",
+                            MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            else if (byte.Parse(AgeInput.Text) < 15 || byte.Parse(AgeInput.Text) > 120)
+            {
+                MessageBox.Show("Age must be between 15 and 120",
                     "Operation unsuccessful",
                         MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
             }
-            else if (EmailInput.Text.Contains('@') == false || EmailInput.Text.Contains('.') == false)
+
+            else if (NameInput.Text.Length >= 30)
             {
-                MessageBox.Show("Email must contain '@' and '.'",
+                MessageBox.Show("Name is too big max 29 characters",
                     "Operation unsuccessful",
                         MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
             }
-            else if (PasswordInput.Text.Length < 4 || PasswordInput.Text.Length >= 10)
+            else if (LastNameInput.Text.Length >= 35)
+            {
+                MessageBox.Show("Last-name is too big max 34 characters",
+                    "Operation unsuccessful",
+                        MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+            }
+            else if (EmailInput.Text.Length <= 7 || EmailInput.Text.Length >= 50)
+            {
+                MessageBox.Show("Email must be more than 7 and less than 50 characters",
+                    "Operation unsuccessful",
+                        MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+            }
+            else if (!EmailInput.Text.Contains('@') && !EmailInput.Text.Contains('.'))
+            {
+                MessageBox.Show("Email must contain '.' and '@'",
+                    "Operation unsuccessful",
+                        MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+            }
+            else if (PasswordInput.Text.Length <= 4 || PasswordInput.Text.Length >= 10)
             {
                 MessageBox.Show("Password must be more than 4 and less than 10 characters",
                     "Operation unsuccessful",
                         MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
             }
-            else if (AgeInput.Text == "")
-            {
-                MessageBox.Show("Please enter your age",
-                    "Operation unsuccessful",
-                        MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-            }
-            else if (byte.Parse(AgeInput.Text) < 15)
-            {
-                MessageBox.Show("You're not old enough",
-                    "Operation unsuccessful",
-                        MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-            }
-            else if (byte.Parse(AgeInput.Text) > 120)
-            {
-                MessageBox.Show("Age is too big",
-                    "Operation unsuccessful",
-                        MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-            }
         }
 
-        private void AgeInput_KeyPress(object sender, KeyPressEventArgs e)
+private void AgeInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
                 (e.KeyChar != '.'))
@@ -150,3 +161,5 @@ namespace PostalApp.UI
         }
     }
 }
+
+

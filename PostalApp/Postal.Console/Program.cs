@@ -5,6 +5,8 @@ using Microsoft.Data.SqlClient;
 using Postal.Services;
 using System.Text.RegularExpressions;
 
+
+
 //CSC.InsertUser(new User
 //{
 //    FirstName= "მარიკა",
@@ -137,6 +139,10 @@ using System.Text.RegularExpressions;
 //SqlDataConnector sqlCon = new SqlDataConnector();
 
 //bool ifEquals = sqlCon.GetBasicUser().Any(x => sqlCon.Equal(x, mynewuser));
+
+//string myStr = "";
+
+//bool reslt = Regex.IsMatch(myStr, @"^[0-9a-zA-Z]+$");
 
 
 
