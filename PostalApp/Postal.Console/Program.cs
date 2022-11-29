@@ -145,5 +145,23 @@ using System.Text.RegularExpressions;
 //bool reslt = Regex.IsMatch(myStr, @"^[0-9a-zA-Z]+$");
 
 
+SqlDataConnector c = new SqlDataConnector();
+
+var res = c.InsertParcel(new Parcel
+{
+    Id = 0,
+    UserId = 3,
+    ParcelName = "project",
+    ParcelDescription = "project almost done",
+    Delivery = false,
+    ParcelWeight = 200,
+    ParcelPrice = 0.2,
+    SendDate = DateTime.Now,
+    SentFrom = "Abudabi",
+    SentTo = "Geprgia",
+    StatusId = 1,
+    ShippingId = 2
+});
+
 
 Console.ReadKey();

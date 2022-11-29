@@ -208,6 +208,8 @@ namespace Postal.Services
                     cmd.Parameters.AddWithValue("@UserId", model.UserId);
                     cmd.Parameters.AddWithValue("@ParcelName", model.ParcelName);
                     cmd.Parameters.AddWithValue("@ParcelDescription", model.ParcelDescription);
+                    cmd.Parameters.AddWithValue("@Delivery", model.Delivery);
+                    cmd.Parameters.AddWithValue("@ParcelWeight", model.ParcelWeight);
                     cmd.Parameters.AddWithValue("@ParcelPrice", model.ParcelPrice);
                     cmd.Parameters.AddWithValue("@SendDate", model.SendDate);
                     cmd.Parameters.AddWithValue("@SentFrom", model.SentFrom);
@@ -263,7 +265,7 @@ namespace Postal.Services
             return model;
         }
 
-        public List<Parcel> GetAllParcelsPerUser(User model)
+        public List<Parcel> GetAllParcelsPerUser(int userId)
         {
             const string sqlExpression = "sp_allSpecificUserParcels";
             List<Parcel> result = new List<Parcel>();
@@ -277,7 +279,7 @@ namespace Postal.Services
                     SqlCommand cmd = new(sqlExpression, connection);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@UserId", model.UserId);
+                    cmd.Parameters.AddWithValue("@UserId", userId);
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -287,15 +289,17 @@ namespace Postal.Services
                         {
                             result.Add(new Parcel
                             {
-                                UserId = reader.GetInt32(1),
-                                ParcelName = reader.GetString(2),
-                                ParcelDescription = reader.GetString(3),
-                                ParcelPrice = reader.GetInt32(4),
-                                SendDate = reader.GetDateTime(5),
-                                SentFrom = reader.GetString(6),
-                                SentTo = reader.GetString(7),
-                                StatusId = reader.GetByte(8),
-                                ShippingId = reader.GetByte(9)
+                                UserId = reader.GetInt32(0),
+                                ParcelName = reader.GetString(1),
+                                ParcelDescription = reader.GetString(2),
+                                Delivery = reader.GetBoolean(3),
+                                ParcelWeight = reader.GetDouble(4),
+                                ParcelPrice = reader.GetDouble(5),
+                                SendDate = reader.GetDateTime(6),
+                                SentFrom = reader.GetString(7),
+                                SentTo = reader.GetString(8),
+                                StatusId = reader.GetByte(9),
+                                ShippingId = reader.GetByte(10)
                             });
                         }
                     }

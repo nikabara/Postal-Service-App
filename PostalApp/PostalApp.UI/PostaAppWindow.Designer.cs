@@ -46,6 +46,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.UserControlDiv = new System.Windows.Forms.Panel();
+            this.parcelUserControl = new PostalApp.UI.ParcelUserControl();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -56,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.UserControlDiv.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -265,12 +268,30 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // UserControlDiv
+            // 
+            this.UserControlDiv.Controls.Add(this.parcelUserControl);
+            this.UserControlDiv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserControlDiv.Location = new System.Drawing.Point(352, 36);
+            this.UserControlDiv.Name = "UserControlDiv";
+            this.UserControlDiv.Size = new System.Drawing.Size(1116, 802);
+            this.UserControlDiv.TabIndex = 19;
+            // 
+            // parcelUserControl
+            // 
+            this.parcelUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parcelUserControl.Location = new System.Drawing.Point(0, 0);
+            this.parcelUserControl.Name = "parcelUserControl";
+            this.parcelUserControl.Size = new System.Drawing.Size(1116, 802);
+            this.parcelUserControl.TabIndex = 0;
+            // 
             // PostaAppWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1468, 838);
+            this.Controls.Add(this.UserControlDiv);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -293,6 +314,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.UserControlDiv.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -317,5 +339,7 @@
         private Panel panel7;
         private Label label1;
         private PictureBox pictureBox5;
+        private Panel UserControlDiv;
+        private ParcelUserControl parcelUserControl;
     }
 }
