@@ -1,4 +1,4 @@
-using Postal.Library;
+﻿using Postal.Library;
 using System.Data;
 using Postal.Services.Interfaces;
 using Microsoft.Data.SqlClient;
@@ -102,6 +102,23 @@ namespace PostalApp.UI
         {
             //this.Hide();
             //mainAppWindow.Show();
+        }
+
+        bool toggleVis = false;
+        private void togglePasswordVis_Click(object sender, EventArgs e)
+        {
+            toggleVis = !toggleVis;
+
+            if (toggleVis)
+            {
+                LogInPasswordInput.PasswordChar = default;
+                togglePasswordVis.Text = "◎";
+            }
+            else
+            {
+                LogInPasswordInput.PasswordChar = '*';
+                togglePasswordVis.Text = "◉";
+            }
         }
     }
 }

@@ -49,6 +49,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.ExitButtonLogIn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.togglePasswordVis = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -199,10 +200,18 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
+            // togglePasswordVis
+            // 
+            resources.ApplyResources(this.togglePasswordVis, "togglePasswordVis");
+            this.togglePasswordVis.Name = "togglePasswordVis";
+            this.togglePasswordVis.UseVisualStyleBackColor = true;
+            this.togglePasswordVis.Click += new System.EventHandler(this.togglePasswordVis_Click);
+            // 
             // LogInForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.togglePasswordVis);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.SignUpLinkText);
@@ -252,5 +261,6 @@
         private PictureBox pictureBox1;
         private Button ExitButtonLogIn;
         private Panel panel2;
+        private Button togglePasswordVis;
     }
 }
