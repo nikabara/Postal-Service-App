@@ -44,6 +44,9 @@
             this.shippingtypeText = new System.Windows.Forms.Label();
             this.deliveryCheck = new System.Windows.Forms.CheckBox();
             this.createParcel = new System.Windows.Forms.Button();
+            this.parcelDetailControlDiv = new System.Windows.Forms.Panel();
+            this.awaitingText = new System.Windows.Forms.Label();
+            this.parcelDetailControlDiv.SuspendLayout();
             this.SuspendLayout();
             // 
             // ucParcel
@@ -61,7 +64,7 @@
             // 
             this.nameInput.Location = new System.Drawing.Point(21, 126);
             this.nameInput.Name = "nameInput";
-            this.nameInput.Size = new System.Drawing.Size(260, 27);
+            this.nameInput.Size = new System.Drawing.Size(293, 27);
             this.nameInput.TabIndex = 1;
             // 
             // NameText
@@ -80,7 +83,7 @@
             this.descriptionText.AutoSize = true;
             this.descriptionText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.descriptionText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
-            this.descriptionText.Location = new System.Drawing.Point(292, 98);
+            this.descriptionText.Location = new System.Drawing.Point(316, 98);
             this.descriptionText.Name = "descriptionText";
             this.descriptionText.Size = new System.Drawing.Size(160, 25);
             this.descriptionText.TabIndex = 4;
@@ -88,9 +91,9 @@
             // 
             // descriptionInput
             // 
-            this.descriptionInput.Location = new System.Drawing.Point(296, 126);
+            this.descriptionInput.Location = new System.Drawing.Point(320, 126);
             this.descriptionInput.Name = "descriptionInput";
-            this.descriptionInput.Size = new System.Drawing.Size(260, 27);
+            this.descriptionInput.Size = new System.Drawing.Size(291, 27);
             this.descriptionInput.TabIndex = 3;
             // 
             // weightText
@@ -98,25 +101,26 @@
             this.weightText.AutoSize = true;
             this.weightText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.weightText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
-            this.weightText.Location = new System.Drawing.Point(16, 197);
+            this.weightText.Location = new System.Drawing.Point(16, 202);
             this.weightText.Name = "weightText";
-            this.weightText.Size = new System.Drawing.Size(123, 25);
+            this.weightText.Size = new System.Drawing.Size(191, 25);
             this.weightText.TabIndex = 6;
-            this.weightText.Text = "Parcel weight";
+            this.weightText.Text = "Parcel weight (grams)";
             // 
             // weightInput
             // 
-            this.weightInput.Location = new System.Drawing.Point(21, 225);
+            this.weightInput.Location = new System.Drawing.Point(21, 230);
             this.weightInput.Name = "weightInput";
-            this.weightInput.Size = new System.Drawing.Size(149, 27);
+            this.weightInput.Size = new System.Drawing.Size(204, 27);
             this.weightInput.TabIndex = 5;
+            this.weightInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.weightInput_KeyPress);
             // 
             // sentfromText
             // 
             this.sentfromText.AutoSize = true;
             this.sentfromText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.sentfromText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
-            this.sentfromText.Location = new System.Drawing.Point(171, 197);
+            this.sentfromText.Location = new System.Drawing.Point(226, 202);
             this.sentfromText.Name = "sentfromText";
             this.sentfromText.Size = new System.Drawing.Size(64, 25);
             this.sentfromText.TabIndex = 8;
@@ -124,7 +128,7 @@
             // 
             // sentfromInput
             // 
-            this.sentfromInput.Location = new System.Drawing.Point(176, 225);
+            this.sentfromInput.Location = new System.Drawing.Point(231, 230);
             this.sentfromInput.Name = "sentfromInput";
             this.sentfromInput.Size = new System.Drawing.Size(184, 27);
             this.sentfromInput.TabIndex = 7;
@@ -134,7 +138,7 @@
             this.senttoText.AutoSize = true;
             this.senttoText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.senttoText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
-            this.senttoText.Location = new System.Drawing.Point(360, 197);
+            this.senttoText.Location = new System.Drawing.Point(415, 202);
             this.senttoText.Name = "senttoText";
             this.senttoText.Size = new System.Drawing.Size(40, 25);
             this.senttoText.TabIndex = 10;
@@ -142,16 +146,16 @@
             // 
             // senttoInput
             // 
-            this.senttoInput.Location = new System.Drawing.Point(366, 225);
+            this.senttoInput.Location = new System.Drawing.Point(421, 230);
             this.senttoInput.Name = "senttoInput";
             this.senttoInput.Size = new System.Drawing.Size(190, 27);
             this.senttoInput.TabIndex = 9;
             // 
             // shippingtypeButton
             // 
-            this.shippingtypeButton.Location = new System.Drawing.Point(223, 309);
+            this.shippingtypeButton.Location = new System.Drawing.Point(223, 315);
             this.shippingtypeButton.Name = "shippingtypeButton";
-            this.shippingtypeButton.Size = new System.Drawing.Size(333, 29);
+            this.shippingtypeButton.Size = new System.Drawing.Size(388, 29);
             this.shippingtypeButton.TabIndex = 11;
             this.shippingtypeButton.Text = "Choose shipping type    ⬇";
             this.shippingtypeButton.UseVisualStyleBackColor = true;
@@ -162,7 +166,7 @@
             this.shippingtypeText.AutoSize = true;
             this.shippingtypeText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.shippingtypeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
-            this.shippingtypeText.Location = new System.Drawing.Point(16, 309);
+            this.shippingtypeText.Location = new System.Drawing.Point(16, 315);
             this.shippingtypeText.Name = "shippingtypeText";
             this.shippingtypeText.Size = new System.Drawing.Size(201, 25);
             this.shippingtypeText.TabIndex = 12;
@@ -173,7 +177,7 @@
             this.deliveryCheck.AutoSize = true;
             this.deliveryCheck.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.deliveryCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
-            this.deliveryCheck.Location = new System.Drawing.Point(21, 394);
+            this.deliveryCheck.Location = new System.Drawing.Point(15, 402);
             this.deliveryCheck.Name = "deliveryCheck";
             this.deliveryCheck.Size = new System.Drawing.Size(178, 29);
             this.deliveryCheck.TabIndex = 14;
@@ -184,18 +188,41 @@
             // createParcel
             // 
             this.createParcel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.createParcel.Location = new System.Drawing.Point(223, 389);
+            this.createParcel.Location = new System.Drawing.Point(199, 397);
             this.createParcel.Name = "createParcel";
-            this.createParcel.Size = new System.Drawing.Size(333, 34);
+            this.createParcel.Size = new System.Drawing.Size(412, 34);
             this.createParcel.TabIndex = 15;
             this.createParcel.Text = "Create parcel";
             this.createParcel.UseVisualStyleBackColor = true;
+            this.createParcel.Click += new System.EventHandler(this.createParcel_Click);
+            // 
+            // parcelDetailControlDiv
+            // 
+            this.parcelDetailControlDiv.BackColor = System.Drawing.Color.Transparent;
+            this.parcelDetailControlDiv.Controls.Add(this.awaitingText);
+            this.parcelDetailControlDiv.Dock = System.Windows.Forms.DockStyle.Right;
+            this.parcelDetailControlDiv.Location = new System.Drawing.Point(360, 0);
+            this.parcelDetailControlDiv.Name = "parcelDetailControlDiv";
+            this.parcelDetailControlDiv.Size = new System.Drawing.Size(756, 802);
+            this.parcelDetailControlDiv.TabIndex = 17;
+            // 
+            // awaitingText
+            // 
+            this.awaitingText.AutoSize = true;
+            this.awaitingText.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.awaitingText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(197)))), ((int)(((byte)(237)))));
+            this.awaitingText.Location = new System.Drawing.Point(244, 414);
+            this.awaitingText.Name = "awaitingText";
+            this.awaitingText.Size = new System.Drawing.Size(241, 38);
+            this.awaitingText.TabIndex = 0;
+            this.awaitingText.Text = "Awaiting result...";
             // 
             // ParcelUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
+            this.Controls.Add(this.parcelDetailControlDiv);
             this.Controls.Add(this.createParcel);
             this.Controls.Add(this.deliveryCheck);
             this.Controls.Add(this.shippingtypeText);
@@ -213,6 +240,8 @@
             this.Controls.Add(this.ucParcel);
             this.Name = "ParcelUserControl";
             this.Size = new System.Drawing.Size(1116, 802);
+            this.parcelDetailControlDiv.ResumeLayout(false);
+            this.parcelDetailControlDiv.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,5 +265,7 @@
         private Label shippingtypeText;
         private CheckBox deliveryCheck;
         private Button createParcel;
+        private Panel parcelDetailControlDiv;
+        protected Label awaitingText;
     }
 }

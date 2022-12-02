@@ -279,6 +279,7 @@
             // 
             // parcelUserControl
             // 
+            this.parcelUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
             this.parcelUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.parcelUserControl.Location = new System.Drawing.Point(0, 0);
             this.parcelUserControl.Name = "parcelUserControl";

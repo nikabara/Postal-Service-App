@@ -1027,7 +1027,7 @@
     <value>478, 321</value>
   </data>
   <data name="togglePasswordVis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 31</value>
+    <value>34, 31</value>
   </data>
   <data name="togglePasswordVis.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
