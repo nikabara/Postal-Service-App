@@ -60,9 +60,10 @@ namespace PostalApp.UI
         {
             User? ahh = new User
             {
+                UserId = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).UserId,
                 FirstName = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).FirstName,
                 LastName = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).LastName,
-                Email = LogInEmailInput.Text
+                Email = LogInEmailInput.Text,
             };
             PostaAppWindow mainAppWindow = new PostaAppWindow(ahh);
 

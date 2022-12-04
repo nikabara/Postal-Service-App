@@ -32,6 +32,8 @@
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.MainExitButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Userid = new System.Windows.Forms.Label();
+            this.hashtag = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -113,6 +115,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(105)))));
+            this.panel1.Controls.Add(this.hashtag);
+            this.panel1.Controls.Add(this.Userid);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.EmailText);
             this.panel1.Controls.Add(this.NameText);
@@ -124,6 +128,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(352, 802);
             this.panel1.TabIndex = 18;
+            // 
+            // Userid
+            // 
+            this.Userid.AutoSize = true;
+            this.Userid.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Userid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Userid.Location = new System.Drawing.Point(28, 68);
+            this.Userid.Name = "Userid";
+            this.Userid.Size = new System.Drawing.Size(17, 20);
+            this.Userid.TabIndex = 28;
+            this.Userid.Text = "0";
+            // 
+            // hashtag
+            // 
+            this.hashtag.AutoSize = true;
+            this.hashtag.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.hashtag.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.hashtag.Location = new System.Drawing.Point(14, 68);
+            this.hashtag.Name = "hashtag";
+            this.hashtag.Size = new System.Drawing.Size(18, 20);
+            this.hashtag.TabIndex = 27;
+            this.hashtag.Text = "#";
             // 
             // panel7
             // 
@@ -342,5 +368,7 @@
         private PictureBox pictureBox5;
         private Panel UserControlDiv;
         private ParcelUserControl parcelUserControl;
+        public Label Userid;
+        private Label hashtag;
     }
 }

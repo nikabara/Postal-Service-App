@@ -35,6 +35,7 @@ namespace PostalApp.UI
         {
             NameText.Text = $"{gottenUser.FirstName} {gottenUser.LastName}";
             EmailText.Text = gottenUser.Email;
+            Userid.Text = $"{gottenUser.UserId}";
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.resetParcel = new System.Windows.Forms.Button();
+            this.createParcel = new System.Windows.Forms.Button();
             this.totalOut = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.deliveryOut = new System.Windows.Forms.Label();
@@ -44,14 +46,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.detailParcel1 = new System.Windows.Forms.Label();
             this.parcelDetailesText = new System.Windows.Forms.Label();
-            this.createParcel = new System.Windows.Forms.Button();
-            this.resetParcel = new System.Windows.Forms.Button();
+            this.mid = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.mid);
             this.panel1.Controls.Add(this.resetParcel);
             this.panel1.Controls.Add(this.createParcel);
             this.panel1.Controls.Add(this.totalOut);
@@ -74,6 +76,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(788, 802);
             this.panel1.TabIndex = 17;
+            // 
+            // resetParcel
+            // 
+            this.resetParcel.Location = new System.Drawing.Point(169, 579);
+            this.resetParcel.Name = "resetParcel";
+            this.resetParcel.Size = new System.Drawing.Size(145, 37);
+            this.resetParcel.TabIndex = 22;
+            this.resetParcel.Text = "Reset";
+            this.resetParcel.UseVisualStyleBackColor = true;
+            // 
+            // createParcel
+            // 
+            this.createParcel.Location = new System.Drawing.Point(19, 579);
+            this.createParcel.Name = "createParcel";
+            this.createParcel.Size = new System.Drawing.Size(145, 37);
+            this.createParcel.TabIndex = 21;
+            this.createParcel.Text = "Create";
+            this.createParcel.UseVisualStyleBackColor = true;
             // 
             // totalOut
             // 
@@ -240,23 +260,14 @@
             this.parcelDetailesText.TabIndex = 1;
             this.parcelDetailesText.Text = "Parcel detailes";
             // 
-            // createParcel
+            // mid
             // 
-            this.createParcel.Location = new System.Drawing.Point(19, 579);
-            this.createParcel.Name = "createParcel";
-            this.createParcel.Size = new System.Drawing.Size(145, 37);
-            this.createParcel.TabIndex = 21;
-            this.createParcel.Text = "Create";
-            this.createParcel.UseVisualStyleBackColor = true;
-            // 
-            // resetParcel
-            // 
-            this.resetParcel.Location = new System.Drawing.Point(169, 579);
-            this.resetParcel.Name = "resetParcel";
-            this.resetParcel.Size = new System.Drawing.Size(145, 37);
-            this.resetParcel.TabIndex = 22;
-            this.resetParcel.Text = "Reset";
-            this.resetParcel.UseVisualStyleBackColor = true;
+            this.mid.AutoSize = true;
+            this.mid.Location = new System.Drawing.Point(393, 177);
+            this.mid.Name = "mid";
+            this.mid.Size = new System.Drawing.Size(51, 20);
+            this.mid.TabIndex = 23;
+            this.mid.Text = "idhere";
             // 
             // ParcelDetailesUserControl
             // 
@@ -291,5 +302,6 @@
         public Label totalOut;
         private Button resetParcel;
         private Button createParcel;
+        public Label mid;
     }
 }
