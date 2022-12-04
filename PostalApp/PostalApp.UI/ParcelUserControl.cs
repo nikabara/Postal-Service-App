@@ -112,7 +112,7 @@ namespace PostalApp.UI
                 double total = double.Parse(weightInput.Text) / 125 + deliveryFee;
                 obj.totalOut.Text = $"{total}";
             }
-            else if (nameInput.Text == "" && descriptionInput.Text == "" && weightInput.Text == "" && sentfromInput.Text == "" && senttoInput.Text == "")
+            else if (nameInput.Text == "" || descriptionInput.Text == "" || weightInput.Text == "" || sentfromInput.Text == "" || senttoInput.Text == "")
             {
                 MessageBox.Show("Please fill out all the forms", 
                     "Operation unsuccesfull",
