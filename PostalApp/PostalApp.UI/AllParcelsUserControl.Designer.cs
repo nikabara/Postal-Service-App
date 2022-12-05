@@ -45,18 +45,21 @@
             // 
             // ParcelHolder
             // 
-            this.ParcelHolder.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ParcelHolder.Location = new System.Drawing.Point(0, -140);
+            this.ParcelHolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ParcelHolder.Location = new System.Drawing.Point(0, 0);
+            this.ParcelHolder.Margin = new System.Windows.Forms.Padding(0);
             this.ParcelHolder.Name = "ParcelHolder";
-            this.ParcelHolder.Size = new System.Drawing.Size(1116, 942);
+            this.ParcelHolder.Padding = new System.Windows.Forms.Padding(0, 100, 0, 0);
+            this.ParcelHolder.Size = new System.Drawing.Size(1116, 802);
             this.ParcelHolder.TabIndex = 2;
             // 
             // AllParcelsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ParcelHolder);
             this.Controls.Add(this.getParcels);
+            this.Controls.Add(this.ParcelHolder);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "AllParcelsUserControl";
             this.Size = new System.Drawing.Size(1116, 802);
             this.ResumeLayout(false);

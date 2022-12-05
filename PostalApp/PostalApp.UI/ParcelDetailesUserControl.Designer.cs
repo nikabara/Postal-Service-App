@@ -46,14 +46,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.detailParcel1 = new System.Windows.Forms.Label();
             this.parcelDetailesText = new System.Windows.Forms.Label();
-            this.kk = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.kk);
             this.panel1.Controls.Add(this.resetParcel);
             this.panel1.Controls.Add(this.createParcel);
             this.panel1.Controls.Add(this.totalOut);
@@ -261,15 +259,6 @@
             this.parcelDetailesText.TabIndex = 1;
             this.parcelDetailesText.Text = "Parcel detailes";
             // 
-            // kk
-            // 
-            this.kk.AutoSize = true;
-            this.kk.Location = new System.Drawing.Point(438, 192);
-            this.kk.Name = "kk";
-            this.kk.Size = new System.Drawing.Size(50, 20);
-            this.kk.TabIndex = 23;
-            this.kk.Text = "label1";
-            // 
             // ParcelDetailesUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -303,6 +292,5 @@
         public Label totalOut;
         private Button resetParcel;
         private Button createParcel;
-        private Label kk;
     }
 }
