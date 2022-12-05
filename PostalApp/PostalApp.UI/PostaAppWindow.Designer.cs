@@ -32,34 +32,29 @@
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.MainExitButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Userid = new System.Windows.Forms.Label();
             this.hashtag = new System.Windows.Forms.Label();
+            this.Userid = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.EmailText = new System.Windows.Forms.Label();
             this.NameText = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.placeOrder = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.allParcels = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UserControlDiv = new System.Windows.Forms.Panel();
-            this.parcelUserControl = new PostalApp.UI.ParcelUserControl();
+            this.nothingHereYet = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel6.SuspendLayout();
+            this.placeOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.allParcels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.UserControlDiv.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,25 +115,13 @@
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.EmailText);
             this.panel1.Controls.Add(this.NameText);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.placeOrder);
+            this.panel1.Controls.Add(this.allParcels);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(352, 802);
             this.panel1.TabIndex = 18;
-            // 
-            // Userid
-            // 
-            this.Userid.AutoSize = true;
-            this.Userid.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Userid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Userid.Location = new System.Drawing.Point(28, 68);
-            this.Userid.Name = "Userid";
-            this.Userid.Size = new System.Drawing.Size(17, 20);
-            this.Userid.TabIndex = 28;
-            this.Userid.Text = "0";
             // 
             // hashtag
             // 
@@ -151,12 +134,23 @@
             this.hashtag.TabIndex = 27;
             this.hashtag.Text = "#";
             // 
+            // Userid
+            // 
+            this.Userid.AutoSize = true;
+            this.Userid.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Userid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Userid.Location = new System.Drawing.Point(28, 68);
+            this.Userid.Name = "Userid";
+            this.Userid.Size = new System.Drawing.Size(17, 20);
+            this.Userid.TabIndex = 28;
+            this.Userid.Text = "0";
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(87)))), ((int)(((byte)(121)))));
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.pictureBox5);
-            this.panel7.Location = new System.Drawing.Point(12, 185);
+            this.panel7.Location = new System.Drawing.Point(12, 140);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(318, 43);
             this.panel7.TabIndex = 26;
@@ -204,15 +198,16 @@
             this.NameText.TabIndex = 24;
             this.NameText.Text = "Name here";
             // 
-            // panel6
+            // placeOrder
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(87)))), ((int)(((byte)(121)))));
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.pictureBox4);
-            this.panel6.Location = new System.Drawing.Point(12, 304);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(318, 43);
-            this.panel6.TabIndex = 23;
+            this.placeOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(87)))), ((int)(((byte)(121)))));
+            this.placeOrder.Controls.Add(this.label5);
+            this.placeOrder.Controls.Add(this.pictureBox4);
+            this.placeOrder.Location = new System.Drawing.Point(12, 255);
+            this.placeOrder.Name = "placeOrder";
+            this.placeOrder.Size = new System.Drawing.Size(318, 43);
+            this.placeOrder.TabIndex = 23;
+            this.placeOrder.Click += new System.EventHandler(this.placeOrder_Click);
             // 
             // label5
             // 
@@ -234,15 +229,16 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // panel5
+            // allParcels
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(87)))), ((int)(((byte)(121)))));
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Location = new System.Drawing.Point(12, 245);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(318, 43);
-            this.panel5.TabIndex = 22;
+            this.allParcels.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(87)))), ((int)(((byte)(121)))));
+            this.allParcels.Controls.Add(this.label4);
+            this.allParcels.Controls.Add(this.pictureBox3);
+            this.allParcels.Location = new System.Drawing.Point(12, 197);
+            this.allParcels.Name = "allParcels";
+            this.allParcels.Size = new System.Drawing.Size(318, 43);
+            this.allParcels.TabIndex = 22;
+            this.allParcels.Click += new System.EventHandler(this.allParcels_Click);
             // 
             // label4
             // 
@@ -251,9 +247,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
             this.label4.Location = new System.Drawing.Point(50, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 20);
+            this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 1;
-            this.label4.Text = "All items";
+            this.label4.Text = "All parcels";
             // 
             // pictureBox3
             // 
@@ -264,53 +260,25 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(87)))), ((int)(((byte)(121)))));
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(12, 126);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(318, 43);
-            this.panel3.TabIndex = 20;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
-            this.label2.Location = new System.Drawing.Point(50, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Home";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 43);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // UserControlDiv
             // 
-            this.UserControlDiv.Controls.Add(this.parcelUserControl);
+            this.UserControlDiv.Controls.Add(this.nothingHereYet);
             this.UserControlDiv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserControlDiv.Location = new System.Drawing.Point(352, 36);
             this.UserControlDiv.Name = "UserControlDiv";
             this.UserControlDiv.Size = new System.Drawing.Size(1116, 802);
             this.UserControlDiv.TabIndex = 19;
             // 
-            // parcelUserControl
+            // nothingHereYet
             // 
-            this.parcelUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(237)))), ((int)(((byte)(247)))));
-            this.parcelUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parcelUserControl.Location = new System.Drawing.Point(0, 0);
-            this.parcelUserControl.Name = "parcelUserControl";
-            this.parcelUserControl.Size = new System.Drawing.Size(1116, 802);
-            this.parcelUserControl.TabIndex = 0;
+            this.nothingHereYet.AutoSize = true;
+            this.nothingHereYet.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nothingHereYet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.nothingHereYet.Location = new System.Drawing.Point(568, 366);
+            this.nothingHereYet.Name = "nothingHereYet";
+            this.nothingHereYet.Size = new System.Drawing.Size(299, 41);
+            this.nothingHereYet.TabIndex = 0;
+            this.nothingHereYet.Text = "Nothing here yet...";
             // 
             // PostaAppWindow
             // 
@@ -332,16 +300,14 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.placeOrder.ResumeLayout(false);
+            this.placeOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.allParcels.ResumeLayout(false);
+            this.allParcels.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.UserControlDiv.ResumeLayout(false);
+            this.UserControlDiv.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -352,23 +318,20 @@
         private Button MainExitButton;
         private Panel panel1;
         private Button MinimizeButton;
-        private Panel panel3;
-        private Label label2;
-        private Panel panel6;
+        private Panel placeOrder;
         private Label label5;
         private PictureBox pictureBox4;
-        private Panel panel5;
+        private Panel allParcels;
         private Label label4;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox1;
         private Label EmailText;
         private Label NameText;
         private Panel panel7;
         private Label label1;
         private PictureBox pictureBox5;
         private Panel UserControlDiv;
-        private ParcelUserControl parcelUserControl;
         public Label Userid;
         private Label hashtag;
+        private Label nothingHereYet;
     }
 }

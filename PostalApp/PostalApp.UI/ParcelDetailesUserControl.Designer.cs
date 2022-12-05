@@ -46,14 +46,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.detailParcel1 = new System.Windows.Forms.Label();
             this.parcelDetailesText = new System.Windows.Forms.Label();
-            this.mid = new System.Windows.Forms.Label();
+            this.kk = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.mid);
+            this.panel1.Controls.Add(this.kk);
             this.panel1.Controls.Add(this.resetParcel);
             this.panel1.Controls.Add(this.createParcel);
             this.panel1.Controls.Add(this.totalOut);
@@ -94,6 +94,7 @@
             this.createParcel.TabIndex = 21;
             this.createParcel.Text = "Create";
             this.createParcel.UseVisualStyleBackColor = true;
+            this.createParcel.Click += new System.EventHandler(this.createParcel_Click);
             // 
             // totalOut
             // 
@@ -260,14 +261,14 @@
             this.parcelDetailesText.TabIndex = 1;
             this.parcelDetailesText.Text = "Parcel detailes";
             // 
-            // mid
+            // kk
             // 
-            this.mid.AutoSize = true;
-            this.mid.Location = new System.Drawing.Point(393, 177);
-            this.mid.Name = "mid";
-            this.mid.Size = new System.Drawing.Size(51, 20);
-            this.mid.TabIndex = 23;
-            this.mid.Text = "idhere";
+            this.kk.AutoSize = true;
+            this.kk.Location = new System.Drawing.Point(438, 192);
+            this.kk.Name = "kk";
+            this.kk.Size = new System.Drawing.Size(50, 20);
+            this.kk.TabIndex = 23;
+            this.kk.Text = "label1";
             // 
             // ParcelDetailesUserControl
             // 
@@ -302,6 +303,6 @@
         public Label totalOut;
         private Button resetParcel;
         private Button createParcel;
-        public Label mid;
+        private Label kk;
     }
 }

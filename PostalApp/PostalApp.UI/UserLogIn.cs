@@ -67,6 +67,8 @@ namespace PostalApp.UI
             };
             PostaAppWindow mainAppWindow = new PostaAppWindow(ahh);
 
+            ParcelDetailesUserControl myControl = new ParcelDetailesUserControl(ahh.UserId);
+
             var gottenUser = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text);
 
             if (gottenUser.Email == LogInEmailInput.Text && gottenUser.Password == LogInPasswordInput.Text)

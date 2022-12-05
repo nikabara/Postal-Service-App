@@ -90,8 +90,7 @@ namespace PostalApp.UI
                 double deliveryFee;
 
                 awaitingText.Visible = false;
-                var obj = new ParcelDetailesUserControl();
-                obj.Dock = DockStyle.Fill;
+                var obj = new ParcelDetailesUserControl() { Dock = DockStyle.Fill };
                 parcelDetailControlDiv.Controls.Add(obj);
 
                 obj.parcelNameOut.Text = nameInput.Text;
