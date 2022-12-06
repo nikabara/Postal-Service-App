@@ -201,9 +201,9 @@
             this.parcelDetailControlDiv.BackColor = System.Drawing.Color.Transparent;
             this.parcelDetailControlDiv.Controls.Add(this.awaitingText);
             this.parcelDetailControlDiv.Dock = System.Windows.Forms.DockStyle.Right;
-            this.parcelDetailControlDiv.Location = new System.Drawing.Point(296, 0);
+            this.parcelDetailControlDiv.Location = new System.Drawing.Point(654, 0);
             this.parcelDetailControlDiv.Name = "parcelDetailControlDiv";
-            this.parcelDetailControlDiv.Size = new System.Drawing.Size(820, 802);
+            this.parcelDetailControlDiv.Size = new System.Drawing.Size(462, 802);
             this.parcelDetailControlDiv.TabIndex = 17;
             // 
             // awaitingText

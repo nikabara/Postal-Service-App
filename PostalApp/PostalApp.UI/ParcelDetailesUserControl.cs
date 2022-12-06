@@ -14,14 +14,10 @@ namespace PostalApp.UI
 {
     public partial class ParcelDetailesUserControl : UserControl
     {
-        public ParcelDetailesUserControl()
+        public User MyUserId { get; set; }
+        public ParcelDetailesUserControl(User MyUserId)
         {
             InitializeComponent();
-        }
-
-        public int MyUserId { get; set; }
-        public ParcelDetailesUserControl(int MyUserId)
-        {
             this.MyUserId = MyUserId;
         }
 
@@ -38,7 +34,7 @@ namespace PostalApp.UI
 
             var res = new Parcel()
             {
-                UserId = MyUserId,
+                UserId = MyUserId.UserId,
                 ParcelName = parcelNameOut.Text,
                 ParcelDescription = parcelDescrOut.Text,
                 Delivery = delivery,

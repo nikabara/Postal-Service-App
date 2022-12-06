@@ -6,7 +6,8 @@ namespace PostalApp.UI
 {
     public partial class PostaAppWindow : Form
     {
-        public User? gottenUser { get; set; }
+        public User? gottenUser = new User();
+        ParcelUserControl CreateParcel = new ParcelUserControl();
         public PostaAppWindow(User? gottenUser)
         {
             InitializeComponent();
@@ -35,14 +36,14 @@ namespace PostalApp.UI
 
         private void PostaAppWindow_Load(object sender, EventArgs e)
         {
+            CreateParcel = new ParcelUserControl(gottenUser);
             NameText.Text = $"{gottenUser.FirstName} {gottenUser.LastName}";
             EmailText.Text = gottenUser.Email;
             Userid.Text = $"{gottenUser.UserId}";
-            //ParcelDetailesUserControl myControl = new ParcelDetailesUserControl(gottenUser.UserId);
+            ParcelDetailesUserControl myControl = new ParcelDetailesUserControl(gottenUser);
         }
 
 
-        readonly ParcelUserControl CreateParcel = new ParcelUserControl() { Dock = DockStyle.Fill };
         private void placeOrder_Click(object sender, EventArgs e)
         {
             UserControlDiv.Controls.Clear();

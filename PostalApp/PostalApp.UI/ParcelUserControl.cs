@@ -8,12 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Schema;
+using Postal.Library;
 
 namespace PostalApp.UI
 {
     public partial class ParcelUserControl : UserControl
     {
         ContextMenuStrip contextMenuStrip1 = new ContextMenuStrip();
+        public User MyUser { get; set; }
+        public ParcelUserControl(User MyUser)
+        {
+            InitializeComponent();
+            this.MyUser = MyUser;
+        }
+
         public ParcelUserControl()
         {
             InitializeComponent();
@@ -90,7 +98,7 @@ namespace PostalApp.UI
                 double deliveryFee;
 
                 awaitingText.Visible = false;
-                var obj = new ParcelDetailesUserControl() { Dock = DockStyle.Fill };
+                var obj = new ParcelDetailesUserControl(MyUser) { Dock = DockStyle.Fill };
                 parcelDetailControlDiv.Controls.Add(obj);
 
                 obj.parcelNameOut.Text = nameInput.Text;
