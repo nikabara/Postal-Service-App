@@ -48,6 +48,7 @@ namespace PostalApp.UI
         {
             UserControlDiv.Controls.Clear();
             UserControlDiv.Controls.Add(CreateParcel);
+            CreateParcel.Dock = DockStyle.Fill;
         }
 
         readonly ListBox listBox = new ListBox();
@@ -87,6 +88,11 @@ namespace PostalApp.UI
             GetParcels.ParcelHolder.Controls.Add(listBox);
             UserControlDiv.Controls.Clear();
             UserControlDiv.Controls.Add(GetParcels);
+        }
+
+        private void UserControlDiv_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

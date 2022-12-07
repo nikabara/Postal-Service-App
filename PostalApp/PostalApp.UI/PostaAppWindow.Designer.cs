@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PostaAppWindow));
             this.panel2 = new System.Windows.Forms.Panel();
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.MainExitButton = new System.Windows.Forms.Button();
@@ -268,6 +269,7 @@
             this.UserControlDiv.Name = "UserControlDiv";
             this.UserControlDiv.Size = new System.Drawing.Size(1116, 802);
             this.UserControlDiv.TabIndex = 19;
+            this.UserControlDiv.Paint += new System.Windows.Forms.PaintEventHandler(this.UserControlDiv_Paint);
             // 
             // nothingHereYet
             // 
@@ -290,6 +292,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PostaAppWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -44,8 +44,8 @@
             this.shippingtypeText = new System.Windows.Forms.Label();
             this.deliveryCheck = new System.Windows.Forms.CheckBox();
             this.createParcel = new System.Windows.Forms.Button();
-            this.parcelDetailControlDiv = new System.Windows.Forms.Panel();
             this.awaitingText = new System.Windows.Forms.Label();
+            this.parcelDetailControlDiv = new System.Windows.Forms.Panel();
             this.parcelDetailControlDiv.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,26 +196,27 @@
             this.createParcel.UseVisualStyleBackColor = true;
             this.createParcel.Click += new System.EventHandler(this.createParcel_Click);
             // 
-            // parcelDetailControlDiv
-            // 
-            this.parcelDetailControlDiv.BackColor = System.Drawing.Color.Transparent;
-            this.parcelDetailControlDiv.Controls.Add(this.awaitingText);
-            this.parcelDetailControlDiv.Dock = System.Windows.Forms.DockStyle.Right;
-            this.parcelDetailControlDiv.Location = new System.Drawing.Point(654, 0);
-            this.parcelDetailControlDiv.Name = "parcelDetailControlDiv";
-            this.parcelDetailControlDiv.Size = new System.Drawing.Size(462, 802);
-            this.parcelDetailControlDiv.TabIndex = 17;
-            // 
             // awaitingText
             // 
             this.awaitingText.AutoSize = true;
             this.awaitingText.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.awaitingText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(197)))), ((int)(((byte)(237)))));
-            this.awaitingText.Location = new System.Drawing.Point(234, 377);
+            this.awaitingText.Location = new System.Drawing.Point(141, 341);
             this.awaitingText.Name = "awaitingText";
             this.awaitingText.Size = new System.Drawing.Size(241, 38);
             this.awaitingText.TabIndex = 0;
             this.awaitingText.Text = "Awaiting result...";
+            // 
+            // parcelDetailControlDiv
+            // 
+            this.parcelDetailControlDiv.BackColor = System.Drawing.Color.DarkGray;
+            this.parcelDetailControlDiv.Controls.Add(this.awaitingText);
+            this.parcelDetailControlDiv.Dock = System.Windows.Forms.DockStyle.Right;
+            this.parcelDetailControlDiv.Location = new System.Drawing.Point(634, 0);
+            this.parcelDetailControlDiv.Name = "parcelDetailControlDiv";
+            this.parcelDetailControlDiv.Size = new System.Drawing.Size(482, 802);
+            this.parcelDetailControlDiv.TabIndex = 17;
+            this.parcelDetailControlDiv.Visible = false;
             // 
             // ParcelUserControl
             // 
@@ -260,12 +261,12 @@
         private TextBox sentfromInput;
         private Label senttoText;
         private TextBox senttoInput;
-        private Button shippingtypeButton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label shippingtypeText;
         private CheckBox deliveryCheck;
-        private Panel parcelDetailControlDiv;
         protected Label awaitingText;
         public Button createParcel;
+        private Panel parcelDetailControlDiv;
+        public Button shippingtypeButton;
     }
 }

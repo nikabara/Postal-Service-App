@@ -46,12 +46,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.detailParcel1 = new System.Windows.Forms.Label();
             this.parcelDetailesText = new System.Windows.Forms.Label();
+            this.shipMethod = new System.Windows.Forms.Label();
+            this.shipTypeText = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.shipMethod);
+            this.panel1.Controls.Add(this.shipTypeText);
             this.panel1.Controls.Add(this.resetParcel);
             this.panel1.Controls.Add(this.createParcel);
             this.panel1.Controls.Add(this.totalOut);
@@ -121,7 +125,7 @@
             this.deliveryOut.AutoSize = true;
             this.deliveryOut.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.deliveryOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
-            this.deliveryOut.Location = new System.Drawing.Point(182, 389);
+            this.deliveryOut.Location = new System.Drawing.Point(182, 420);
             this.deliveryOut.Name = "deliveryOut";
             this.deliveryOut.Size = new System.Drawing.Size(121, 25);
             this.deliveryOut.TabIndex = 18;
@@ -132,7 +136,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
-            this.label5.Location = new System.Drawing.Point(19, 389);
+            this.label5.Location = new System.Drawing.Point(19, 420);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 25);
             this.label5.TabIndex = 17;
@@ -259,6 +263,28 @@
             this.parcelDetailesText.TabIndex = 1;
             this.parcelDetailesText.Text = "Parcel detailes";
             // 
+            // shipMethod
+            // 
+            this.shipMethod.AutoSize = true;
+            this.shipMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.shipMethod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
+            this.shipMethod.Location = new System.Drawing.Point(182, 373);
+            this.shipMethod.Name = "shipMethod";
+            this.shipMethod.Size = new System.Drawing.Size(126, 25);
+            this.shipMethod.TabIndex = 24;
+            this.shipMethod.Text = "shipping here";
+            // 
+            // shipTypeText
+            // 
+            this.shipTypeText.AutoSize = true;
+            this.shipTypeText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.shipTypeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
+            this.shipTypeText.Location = new System.Drawing.Point(19, 373);
+            this.shipTypeText.Name = "shipTypeText";
+            this.shipTypeText.Size = new System.Drawing.Size(165, 25);
+            this.shipTypeText.TabIndex = 23;
+            this.shipTypeText.Text = "Shipping method :";
+            // 
             // ParcelDetailesUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -266,6 +292,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ParcelDetailesUserControl";
             this.Size = new System.Drawing.Size(788, 802);
+            this.Load += new System.EventHandler(this.ParcelDetailesUserControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -291,6 +318,8 @@
         public Label parcelDescrOut;
         public Label totalOut;
         private Button resetParcel;
-        private Button createParcel;
+        public Button createParcel;
+        public Label shipMethod;
+        private Label shipTypeText;
     }
 }

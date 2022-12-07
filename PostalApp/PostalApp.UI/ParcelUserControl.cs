@@ -89,23 +89,22 @@ namespace PostalApp.UI
 
         private void createParcel_Click(object sender, EventArgs e)
         {
-
             if (nameInput.Text != "" && descriptionInput.Text != "" && weightInput.Text != "" && sentfromInput.Text != "" && senttoInput.Text != "" &&
                 shippingtypeButton.Text == "Air" || shippingtypeButton.Text == "Ground" || shippingtypeButton.Text == "Marine" && nameInput.Text.Length < 30 &&
                 descriptionInput.Text.Length < 250 && double.Parse(weightInput.Text) > 0 && double.Parse(weightInput.Text) < 10000 && sentfromInput.Text.Length < 20 && senttoInput.Text.Length < 20)
-
             {
+                var obj = new ParcelDetailesUserControl(MyUser);
                 double deliveryFee;
 
                 awaitingText.Visible = false;
-                var obj = new ParcelDetailesUserControl(MyUser) { Dock = DockStyle.Fill };
-                parcelDetailControlDiv.Controls.Add(obj);
-
+                this.Controls.Add(obj);
+                obj.Dock = DockStyle.Right;
                 obj.parcelNameOut.Text = nameInput.Text;
                 obj.parcelDescrOut.Text = descriptionInput.Text;
                 obj.parcelWeightOut.Text = weightInput.Text;    
                 obj.fromOut.Text = sentfromInput.Text;
                 obj.toOut.Text = senttoInput.Text;
+                obj.shipMethod.Text = shippingtypeButton.Text;
                 if (deliveryCheck.Checked == true)
                 {
                     obj.deliveryOut.Text = "Included";
@@ -118,6 +117,14 @@ namespace PostalApp.UI
                 }
                 double total = double.Parse(weightInput.Text) / 125 + deliveryFee;
                 obj.totalOut.Text = $"{total}";
+
+                nameInput.Text = "";
+                descriptionInput.Text = "";
+                weightInput.Text = "";
+                sentfromInput.Text = "";
+                senttoInput.Text = "";
+                shippingtypeButton.Text = "Choose shipping type    ⬇";
+                deliveryCheck.Checked = false;
             }
             else if (nameInput.Text == "" || descriptionInput.Text == "" || weightInput.Text == "" || sentfromInput.Text == "" || senttoInput.Text == "")
             {

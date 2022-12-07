@@ -250,6 +250,7 @@ namespace Postal.Services
                     cmd.Parameters.AddWithValue("@Age", model.Age);
                     cmd.Parameters.AddWithValue("@Email", model.Email);
                     cmd.Parameters.AddWithValue("@Password", model.Password);
+                    cmd.Parameters.AddWithValue("@Balance", model.Balance);
 
                     cmd.ExecuteNonQuery();
                 }
