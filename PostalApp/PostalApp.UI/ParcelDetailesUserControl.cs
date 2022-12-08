@@ -21,6 +21,10 @@ namespace PostalApp.UI
             InitializeComponent();
             this.MyUserId = MyUserId;
         }
+        public ParcelDetailesUserControl()
+        {
+            InitializeComponent();
+        }
 
         private void createParcel_Click(object sender, EventArgs e)
         {
@@ -71,6 +75,18 @@ namespace PostalApp.UI
         private void ParcelDetailesUserControl_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
+        }
+
+        private void resetParcel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            parcelNameOut.Text = "";
+            parcelDescrOut.Text = "";
+            parcelWeightOut.Text = "";
+            toOut.Text = "";
+            fromOut.Text = "";
+            shipTypeText.Text = "";
+            deliveryOut.Text = "";
         }
     }
 }

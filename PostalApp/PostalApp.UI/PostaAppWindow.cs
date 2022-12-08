@@ -55,16 +55,25 @@ namespace PostalApp.UI
         readonly SqlDataConnector con = new SqlDataConnector();
         private void ParcelsBox_DoubleClick(object sender, EventArgs e)
         {
+            ParcelDetailesUserControl parcelDetailesWindow = new ParcelDetailesUserControl();
             if (listBox.SelectedItems != null)
             {
-                MessageBox.Show("Open detailes?","",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult openParcelDetailes = MessageBox.Show("Open detailes?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
         }
 
         readonly AllParcelsUserControl GetParcels = new AllParcelsUserControl() { Dock = DockStyle.Fill };
         private void allParcels_Click(object sender, EventArgs e)
         {
+            GetParcels.nothingHereYet.Visible = false;
+            if (listBox.Items.Count == 0)
+            {
+                GetParcels.nothingHereYet.Visible = true;
+            }
+
             listBox.DoubleClick += new EventHandler(ParcelsBox_DoubleClick);
+
+            listBox.Items.Clear();
 
             listBox.Dock = DockStyle.Fill;
             listBox.Font = new Font("Segoe UI", 10f, FontStyle.Bold);
@@ -90,9 +99,12 @@ namespace PostalApp.UI
             UserControlDiv.Controls.Add(GetParcels);
         }
 
-        private void UserControlDiv_Paint(object sender, PaintEventArgs e)
+        private void personalInfo_Click(object sender, EventArgs e)
         {
-
+            UserSettingsUserControl userSettingsControl = new UserSettingsUserControl();
+            userSettingsControl.Dock = DockStyle.Fill;
+            UserControlDiv.Controls.Clear();
+            UserControlDiv.Controls.Add(userSettingsControl);
         }
     }
 }

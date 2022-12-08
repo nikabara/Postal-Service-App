@@ -35,7 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.hashtag = new System.Windows.Forms.Label();
             this.Userid = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.personalInfo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.EmailText = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.nothingHereYet = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.personalInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.placeOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -113,7 +113,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(105)))));
             this.panel1.Controls.Add(this.hashtag);
             this.panel1.Controls.Add(this.Userid);
-            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.personalInfo);
             this.panel1.Controls.Add(this.EmailText);
             this.panel1.Controls.Add(this.NameText);
             this.panel1.Controls.Add(this.placeOrder);
@@ -146,15 +146,16 @@
             this.Userid.TabIndex = 28;
             this.Userid.Text = "0";
             // 
-            // panel7
+            // personalInfo
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(87)))), ((int)(((byte)(121)))));
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.pictureBox5);
-            this.panel7.Location = new System.Drawing.Point(12, 140);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(318, 43);
-            this.panel7.TabIndex = 26;
+            this.personalInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(87)))), ((int)(((byte)(121)))));
+            this.personalInfo.Controls.Add(this.label1);
+            this.personalInfo.Controls.Add(this.pictureBox5);
+            this.personalInfo.Location = new System.Drawing.Point(12, 140);
+            this.personalInfo.Name = "personalInfo";
+            this.personalInfo.Size = new System.Drawing.Size(318, 43);
+            this.personalInfo.TabIndex = 26;
+            this.personalInfo.Click += new System.EventHandler(this.personalInfo_Click);
             // 
             // label1
             // 
@@ -269,7 +270,6 @@
             this.UserControlDiv.Name = "UserControlDiv";
             this.UserControlDiv.Size = new System.Drawing.Size(1116, 802);
             this.UserControlDiv.TabIndex = 19;
-            this.UserControlDiv.Paint += new System.Windows.Forms.PaintEventHandler(this.UserControlDiv_Paint);
             // 
             // nothingHereYet
             // 
@@ -300,8 +300,8 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.personalInfo.ResumeLayout(false);
+            this.personalInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.placeOrder.ResumeLayout(false);
             this.placeOrder.PerformLayout();
@@ -329,7 +329,7 @@
         private PictureBox pictureBox3;
         private Label EmailText;
         private Label NameText;
-        private Panel panel7;
+        private Panel personalInfo;
         private Label label1;
         private PictureBox pictureBox5;
         private Panel UserControlDiv;

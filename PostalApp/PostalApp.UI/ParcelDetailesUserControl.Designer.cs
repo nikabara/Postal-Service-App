@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.shipMethod = new System.Windows.Forms.Label();
+            this.shipTypeText = new System.Windows.Forms.Label();
             this.resetParcel = new System.Windows.Forms.Button();
             this.createParcel = new System.Windows.Forms.Button();
             this.totalOut = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.detailParcel1 = new System.Windows.Forms.Label();
             this.parcelDetailesText = new System.Windows.Forms.Label();
-            this.shipMethod = new System.Windows.Forms.Label();
-            this.shipTypeText = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +79,28 @@
             this.panel1.Size = new System.Drawing.Size(788, 802);
             this.panel1.TabIndex = 17;
             // 
+            // shipMethod
+            // 
+            this.shipMethod.AutoSize = true;
+            this.shipMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.shipMethod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
+            this.shipMethod.Location = new System.Drawing.Point(182, 373);
+            this.shipMethod.Name = "shipMethod";
+            this.shipMethod.Size = new System.Drawing.Size(126, 25);
+            this.shipMethod.TabIndex = 24;
+            this.shipMethod.Text = "shipping here";
+            // 
+            // shipTypeText
+            // 
+            this.shipTypeText.AutoSize = true;
+            this.shipTypeText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.shipTypeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
+            this.shipTypeText.Location = new System.Drawing.Point(19, 373);
+            this.shipTypeText.Name = "shipTypeText";
+            this.shipTypeText.Size = new System.Drawing.Size(165, 25);
+            this.shipTypeText.TabIndex = 23;
+            this.shipTypeText.Text = "Shipping method :";
+            // 
             // resetParcel
             // 
             this.resetParcel.Location = new System.Drawing.Point(169, 579);
@@ -87,6 +109,7 @@
             this.resetParcel.TabIndex = 22;
             this.resetParcel.Text = "Reset";
             this.resetParcel.UseVisualStyleBackColor = true;
+            this.resetParcel.Click += new System.EventHandler(this.resetParcel_Click);
             // 
             // createParcel
             // 
@@ -263,28 +286,6 @@
             this.parcelDetailesText.TabIndex = 1;
             this.parcelDetailesText.Text = "Parcel detailes";
             // 
-            // shipMethod
-            // 
-            this.shipMethod.AutoSize = true;
-            this.shipMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.shipMethod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
-            this.shipMethod.Location = new System.Drawing.Point(182, 373);
-            this.shipMethod.Name = "shipMethod";
-            this.shipMethod.Size = new System.Drawing.Size(126, 25);
-            this.shipMethod.TabIndex = 24;
-            this.shipMethod.Text = "shipping here";
-            // 
-            // shipTypeText
-            // 
-            this.shipTypeText.AutoSize = true;
-            this.shipTypeText.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.shipTypeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(100)))), ((int)(((byte)(115)))));
-            this.shipTypeText.Location = new System.Drawing.Point(19, 373);
-            this.shipTypeText.Name = "shipTypeText";
-            this.shipTypeText.Size = new System.Drawing.Size(165, 25);
-            this.shipTypeText.TabIndex = 23;
-            this.shipTypeText.Text = "Shipping method :";
-            // 
             // ParcelDetailesUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -317,9 +318,9 @@
         public Label parcelWeightOut;
         public Label parcelDescrOut;
         public Label totalOut;
-        private Button resetParcel;
         public Button createParcel;
         public Label shipMethod;
         private Label shipTypeText;
+        public Button resetParcel;
     }
 }
