@@ -2,22 +2,30 @@
 using Postal.Services.Interfaces;
 using Postal.Library;
 using Microsoft.Data.SqlClient;
+using System.Reflection;
 
 namespace Postal.Services
 {
     public class SqlDataConnector : IDataConnection
     {
+        /// <summary>
+        /// Compares 2 user objects
+        /// </summary>
+        /// <param name="x">User object 1</param>
+        /// <param name="y">User object 2</param>
+        /// <returns>bollean if all user obejcts are equal true else false</returns>
         public bool Equal(User x, User y)
         {
             if (x.UserId == y.UserId && x.FirstName == y.FirstName && x.LastName == y.LastName && x.FullName == y.FullName && x.Email == y.Email && x.Password == y.Password)
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
+        /// <summary>
+        /// Gets all parcels ever created from any user
+        /// </summary>
+        /// <returns>List of parcels from any user ever created</returns>
         public List<Parcel> GetParcels()
         {
             const string sqlExpression = "sp_SelectParcels";
@@ -67,7 +75,10 @@ namespace Postal.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Gets shipping id
+        /// </summary>
+        /// <returns>List of shipping ids (Can be used for statistics)</returns>
         public List<Shipping> GetShipping()
         {
             const string sqlExpression = "sp_SelectShippings";
@@ -107,7 +118,10 @@ namespace Postal.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Gets statuses
+        /// </summary>
+        /// <returns>List of statuses</returns>
         public List<Status> GetStatus()
         {
             const string SqlExpression = "sp_SelectStatus";
@@ -147,7 +161,10 @@ namespace Postal.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Gets every user every created
+        /// </summary>
+        /// <returns>List of users</returns>
         public List<User> GetUsers()
         {
             const string sqlExpression = "sp_SelectUsers";
@@ -177,6 +194,7 @@ namespace Postal.Services
                                 Age = reader.GetByte(4),
                                 Email = reader.GetString(5),
                                 Password = reader.GetString(6),
+                                Balance = reader.GetDouble(7),
                             });
                         }
                     }
@@ -192,7 +210,11 @@ namespace Postal.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Inserts parcel data into T-SQL data-base
+        /// </summary>
+        /// <param name="model">Takes Parcel model</param>
+        /// <returns>Inserts parcel directly into data-base</returns>
         public Parcel InsertParcel(Parcel model)
         {
             const string sqlExpression = "sp_InsertParcelData";
@@ -232,7 +254,11 @@ namespace Postal.Services
 
             return model;
         }
-
+        /// <summary>
+        /// Inserts user into T-SQL data-base
+        /// </summary>
+        /// <param name="model">Takes user model</param>
+        /// <returns></returns>
         public User InsertUser(User model)
         {
             const string sqlExpression = "sp_InsertUser";
@@ -265,7 +291,11 @@ namespace Postal.Services
             }
             return model;
         }
-
+        /// <summary>
+        /// Gets all parcels per user with given user id
+        /// </summary>
+        /// <param name="userId">Takes users user id (int)</param>
+        /// <returns>Every parcel that user with given user id created</returns>
         public List<Parcel> GetAllParcelsPerUser(int userId)
         {
             const string sqlExpression = "sp_allSpecificUserParcels";
@@ -317,7 +347,12 @@ namespace Postal.Services
                 return result;
             }
         }
-
+        /// <summary>
+        /// Gets user info with given email and password
+        /// </summary>
+        /// <param name="email">Takes string email</param>
+        /// <param name="password">Takes string password</param>
+        /// <returns>User info with given email and password</returns>
         public User GetLoggedInUserInfo(string email, string password)
         {
             const string sqlExpression = "sp_GetLoggedInUserData";
@@ -362,7 +397,11 @@ namespace Postal.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Gets user info which has entirely equal model with parameter
+        /// </summary>
+        /// <param name="model">User model</param>
+        /// <returns>User</returns>
         public User GetSelectedUser(User model)
         {
             const string sqlExpression = "sp_SelectExactUser";
@@ -382,6 +421,7 @@ namespace Postal.Services
                     cmd.Parameters.AddWithValue("@Age", model.Age);
                     cmd.Parameters.AddWithValue("@Email", model.Email);
                     cmd.Parameters.AddWithValue("@Password", model.Password);
+                    cmd.Parameters.AddWithValue("@Balance", model.Balance);
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -396,6 +436,7 @@ namespace Postal.Services
                             userResult.Age = reader.GetByte(4);
                             userResult.Email = reader.GetString(5);
                             userResult.Password = reader.GetString(6);
+                            userResult.Balance = reader.GetDouble(7);
                         }
                     }
                 }
@@ -410,7 +451,10 @@ namespace Postal.Services
             }
             return userResult;
         }
-
+        /// <summary>
+        /// Gets basic user with Name,Lastname,Age,Email,Password
+        /// </summary>
+        /// <returns>List of users</returns>
         public List<User> GetBasicUser()
         {
             const string sqlExpression = "sp_SelectBasicUser";
@@ -453,6 +497,76 @@ namespace Postal.Services
                 }
             }
             return result;
+        }
+        /// <summary>
+        /// Changes users name and lastname in data-base with given email and password
+        /// </summary>
+        /// <param name="email">Takes email string</param>
+        /// <param name="password">Takes password string</param>
+        /// <param name="newName">Takes new-name</param>
+        /// <param name="newLastName">Takes new-last-name</param>
+        /// <returns>Void, directly inserts into data-base</returns>
+        public void AlterUser(string email, string password, string newName, string newLastName)
+        {
+            const string sqlExpression = "sp_AlterUser";
+
+            using (SqlConnection connection = new SqlConnection(GlobalConfig.ConnectionString()))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new(sqlExpression, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Password", password);
+                    cmd.Parameters.AddWithValue("@FirstName", newName);
+                    cmd.Parameters.AddWithValue("@LastName", newLastName);
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+        /// <summary>
+        /// Performs money transactions on user balance with given email
+        /// </summary>
+        /// <param name="email">Takes email string</param>
+        /// <param name="moneyAmmount">Takes money ammount double</param>
+        /// <returns>Void, directly changes balance in data-base</returns>
+        public void MoneyTransaction(string email, double moneyAmmount)
+        {
+            const string sqlExpression = "sp_CommitMoneyTransaction";
+
+            using (SqlConnection connection = new SqlConnection(GlobalConfig.ConnectionString()))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new(sqlExpression, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@MoneyAmmount", moneyAmmount);
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 }

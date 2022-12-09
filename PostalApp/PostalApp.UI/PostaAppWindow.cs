@@ -36,6 +36,9 @@ namespace PostalApp.UI
 
         private void PostaAppWindow_Load(object sender, EventArgs e)
         {
+            AllParcelsUserControl GetParcels = new AllParcelsUserControl();
+            //GetParcels.nothingHereYet.Visible = false;
+
             CreateParcel = new ParcelUserControl(gottenUser);
             NameText.Text = $"{gottenUser.FirstName} {gottenUser.LastName}";
             EmailText.Text = gottenUser.Email;
@@ -55,25 +58,23 @@ namespace PostalApp.UI
         readonly SqlDataConnector con = new SqlDataConnector();
         private void ParcelsBox_DoubleClick(object sender, EventArgs e)
         {
-            ParcelDetailesUserControl parcelDetailesWindow = new ParcelDetailesUserControl();
-            if (listBox.SelectedItems != null)
-            {
-                DialogResult openParcelDetailes = MessageBox.Show("Open detailes?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            }
+            // code potential to be added here
+            // can be operable window for parcel detailes
+            // or something else
         }
 
         readonly AllParcelsUserControl GetParcels = new AllParcelsUserControl() { Dock = DockStyle.Fill };
-        private void allParcels_Click(object sender, EventArgs e)
+        private void allParcels_Click(object sender, EventArgs e) // repetitive recursion of parcels causes this problem line 66
         {
-            GetParcels.nothingHereYet.Visible = false;
-            if (listBox.Items.Count == 0)
-            {
-                GetParcels.nothingHereYet.Visible = true;
-            }
+            UserControlDiv.Controls.Clear();
+            listBox.Items.Clear();
+
+            //if (listBox.Items.Count == 0)
+            //{
+            //    GetParcels.nothingHereYet.Visible = true;
+            //}
 
             listBox.DoubleClick += new EventHandler(ParcelsBox_DoubleClick);
-
-            listBox.Items.Clear();
 
             listBox.Dock = DockStyle.Fill;
             listBox.Font = new Font("Segoe UI", 10f, FontStyle.Bold);
@@ -95,7 +96,6 @@ namespace PostalApp.UI
             }
 
             GetParcels.ParcelHolder.Controls.Add(listBox);
-            UserControlDiv.Controls.Clear();
             UserControlDiv.Controls.Add(GetParcels);
         }
 

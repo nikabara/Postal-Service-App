@@ -15,5 +15,7 @@ namespace Postal.Services.Interfaces
         public User GetLoggedInUserInfo(string email, string password);
         public List<Parcel> GetAllParcelsPerUser(int userId);
         public User GetSelectedUser(User model);
+        public void AlterUser(string email, string password, string newName, string newLastName);
+        public void MoneyTransaction(string email, double moneyAmmount);
     }
 }
