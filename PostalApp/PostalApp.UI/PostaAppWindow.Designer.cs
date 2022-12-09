@@ -327,8 +327,6 @@
         private Panel allParcels;
         private Label label4;
         private PictureBox pictureBox3;
-        private Label EmailText;
-        private Label NameText;
         private Panel personalInfo;
         private Label label1;
         private PictureBox pictureBox5;
@@ -336,5 +334,7 @@
         public Label Userid;
         private Label hashtag;
         private Label nothingHereYet;
+        public Label NameText;
+        public Label EmailText;
     }
 }

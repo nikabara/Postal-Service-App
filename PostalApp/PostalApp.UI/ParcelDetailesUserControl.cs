@@ -28,7 +28,6 @@ namespace PostalApp.UI
 
         private void createParcel_Click(object sender, EventArgs e)
         {
-
             SqlDataConnector connector = new SqlDataConnector();
 
             bool delivery = false;
@@ -66,10 +65,21 @@ namespace PostalApp.UI
                 ShippingId = MyShippingId
             };
 
-            connector.InsertParcel(res);
+            double Payment = double.Parse(totalOut.Text);
+            double UserCurrentBalance = connector.GetLoggedInUserInfo(MyUserId.Email, MyUserId.Password).Balance;
+            if (UserCurrentBalance >= 0 && UserCurrentBalance > Payment && UserCurrentBalance - Payment >= 0)
+            {
+                connector.InsertParcel(res);
+                connector.MoneyTransaction(MyUserId.Email, -1 * Payment);
 
-            this.Hide();
-            MessageBox.Show("Parcel created", "Operation succesful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                MessageBox.Show("Parcel created", "Operation succesful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Not enought money on your balance", "Operation unsuccesful", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
     }
 
         private void ParcelDetailesUserControl_Load(object sender, EventArgs e)

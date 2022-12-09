@@ -13,6 +13,10 @@ namespace PostalApp.UI
             InitializeComponent();
             this.gottenUser = gottenUser;
         }
+        public PostaAppWindow()
+        {
+            InitializeComponent();
+        }
 
         private void MainExitButton_Click(object sender, EventArgs e)
         {
@@ -37,7 +41,6 @@ namespace PostalApp.UI
         private void PostaAppWindow_Load(object sender, EventArgs e)
         {
             AllParcelsUserControl GetParcels = new AllParcelsUserControl();
-            //GetParcels.nothingHereYet.Visible = false;
 
             CreateParcel = new ParcelUserControl(gottenUser);
             NameText.Text = $"{gottenUser.FirstName} {gottenUser.LastName}";
@@ -45,7 +48,6 @@ namespace PostalApp.UI
             Userid.Text = $"{gottenUser.UserId}";
             ParcelDetailesUserControl myControl = new ParcelDetailesUserControl(gottenUser);
         }
-
 
         private void placeOrder_Click(object sender, EventArgs e)
         {
@@ -68,11 +70,6 @@ namespace PostalApp.UI
         {
             UserControlDiv.Controls.Clear();
             listBox.Items.Clear();
-
-            //if (listBox.Items.Count == 0)
-            //{
-            //    GetParcels.nothingHereYet.Visible = true;
-            //}
 
             listBox.DoubleClick += new EventHandler(ParcelsBox_DoubleClick);
 

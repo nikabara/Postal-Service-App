@@ -383,6 +383,7 @@ namespace Postal.Services
                             result.Age = reader.GetByte(4);
                             result.Email = reader.GetString(5);
                             result.Password = reader.GetString(6);
+                            result.Balance = reader.GetDouble(7);
                         }
                     }
                 }

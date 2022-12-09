@@ -20,6 +20,7 @@ namespace PostalApp.UI
 
         private void EditButton_Click(object sender, EventArgs e)
         {
+            PostaAppWindow MainAppWindow = new PostaAppWindow();
             SqlDataConnector con = new SqlDataConnector();
             if (NameInput.Text != "" && LastNameInput.Text != "" && PasswordInput.Text != "" && EmailInput.Text != "")
             {
@@ -29,6 +30,8 @@ namespace PostalApp.UI
                 {
                     con.AlterUser(EmailInput.Text, PasswordInput.Text, NameInput.Text, LastNameInput.Text);
                     MessageBox.Show("User altered", "Operation succesful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MainAppWindow.NameText.Text = $"{NameInput.Text} {LastNameInput.Text}";
 
                     NameInput.Text = "";
                     LastNameInput.Text = "";

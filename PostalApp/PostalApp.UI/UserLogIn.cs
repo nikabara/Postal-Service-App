@@ -64,6 +64,7 @@ namespace PostalApp.UI
                 FirstName = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).FirstName,
                 LastName = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).LastName,
                 Email = LogInEmailInput.Text,
+                Password = LogInPasswordInput.Text
             };
             PostaAppWindow mainAppWindow = new PostaAppWindow(ahh);
 
