@@ -40,12 +40,14 @@ namespace PostalApp.UI
 
         private void PostaAppWindow_Load(object sender, EventArgs e)
         {
+            SqlDataConnector con = new SqlDataConnector();
             AllParcelsUserControl GetParcels = new AllParcelsUserControl();
 
             CreateParcel = new ParcelUserControl(gottenUser);
             NameText.Text = $"{gottenUser.FirstName} {gottenUser.LastName}";
             EmailText.Text = gottenUser.Email;
             Userid.Text = $"{gottenUser.UserId}";
+            balanceText.Text = $"{con.GetLoggedInUserInfo(gottenUser.Email, gottenUser.Password).Balance}$";
             ParcelDetailesUserControl myControl = new ParcelDetailesUserControl(gottenUser);
         }
 
@@ -102,6 +104,12 @@ namespace PostalApp.UI
             userSettingsControl.Dock = DockStyle.Fill;
             UserControlDiv.Controls.Clear();
             UserControlDiv.Controls.Add(userSettingsControl);
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            NameText.Text = $"{con.GetLoggedInUserInfo(gottenUser.Email, gottenUser.Password).FirstName} {con.GetLoggedInUserInfo(gottenUser.Email, gottenUser.Password).LastName}";
+            balanceText.Text = $"{con.GetLoggedInUserInfo(gottenUser.Email, gottenUser.Password).Balance}$";
         }
     }
 }

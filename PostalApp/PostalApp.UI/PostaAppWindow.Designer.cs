@@ -33,6 +33,9 @@
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.MainExitButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.balanceText = new System.Windows.Forms.Label();
             this.hashtag = new System.Windows.Forms.Label();
             this.Userid = new System.Windows.Forms.Label();
             this.personalInfo = new System.Windows.Forms.Panel();
@@ -48,8 +51,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.UserControlDiv = new System.Windows.Forms.Panel();
             this.nothingHereYet = new System.Windows.Forms.Label();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.personalInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.placeOrder.SuspendLayout();
@@ -62,6 +67,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.refreshButton);
             this.panel2.Controls.Add(this.MinimizeButton);
             this.panel2.Controls.Add(this.MainExitButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -111,6 +117,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(105)))));
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.hashtag);
             this.panel1.Controls.Add(this.Userid);
             this.panel1.Controls.Add(this.personalInfo);
@@ -123,6 +130,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(352, 802);
             this.panel1.TabIndex = 18;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.balanceText);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 677);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(352, 125);
+            this.panel3.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(7, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 28);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Your balance :";
+            // 
+            // balanceText
+            // 
+            this.balanceText.AutoSize = true;
+            this.balanceText.BackColor = System.Drawing.Color.Transparent;
+            this.balanceText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.balanceText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.balanceText.Location = new System.Drawing.Point(146, 88);
+            this.balanceText.Name = "balanceText";
+            this.balanceText.Size = new System.Drawing.Size(134, 28);
+            this.balanceText.TabIndex = 29;
+            this.balanceText.Text = "Balance here";
             // 
             // hashtag
             // 
@@ -282,6 +323,24 @@
             this.nothingHereYet.TabIndex = 0;
             this.nothingHereYet.Text = "Nothing here yet...";
             // 
+            // refreshButton
+            // 
+            this.refreshButton.BackColor = System.Drawing.Color.DarkGray;
+            this.refreshButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.refreshButton.FlatAppearance.BorderSize = 0;
+            this.refreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.refreshButton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.refreshButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.refreshButton.Location = new System.Drawing.Point(1330, 0);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(45, 36);
+            this.refreshButton.TabIndex = 11;
+            this.refreshButton.Text = "↻";
+            this.refreshButton.UseVisualStyleBackColor = false;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
             // PostaAppWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -300,6 +359,8 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.personalInfo.ResumeLayout(false);
             this.personalInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -336,5 +397,9 @@
         private Label nothingHereYet;
         public Label NameText;
         public Label EmailText;
+        private Panel panel3;
+        public Label balanceText;
+        public Label label2;
+        private Button refreshButton;
     }
 }
