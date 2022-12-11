@@ -92,9 +92,9 @@ namespace PostalApp.UI
         {
             try
             {
-                if (nameInput.Text != "" && descriptionInput.Text != "" && weightInput.Text != "" && sentfromInput.Text != "" && senttoInput.Text != "" &&
+                if (nameInput.Text != "" && descriptionInput.Text != "" && descriptionInput.Text.Length > 3 && descriptionInput.Text.Length < 250 && weightInput.Text != "" && sentfromInput.Text != "" && senttoInput.Text != "" &&
                 shippingtypeButton.Text == "Air" || shippingtypeButton.Text == "Ground" || shippingtypeButton.Text == "Marine" && nameInput.Text.Length > 3 && nameInput.Text.Length < 30 &&
-                descriptionInput.Text.Length > 3 && descriptionInput.Text.Length < 250 && double.Parse(weightInput.Text) > 0 && double.Parse(weightInput.Text) < 10000 && sentfromInput.Text.Length < 20 && senttoInput.Text.Length < 20)
+                double.Parse(weightInput.Text) > 0 && double.Parse(weightInput.Text) < 10000 && sentfromInput.Text.Length < 20 && senttoInput.Text.Length < 20)
                 {
                     var obj = new ParcelDetailesUserControl(MyUser);
                     double deliveryFee;

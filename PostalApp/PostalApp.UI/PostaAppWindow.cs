@@ -108,8 +108,9 @@ namespace PostalApp.UI
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
-            NameText.Text = $"{con.GetLoggedInUserInfo(gottenUser.Email, gottenUser.Password).FirstName} {con.GetLoggedInUserInfo(gottenUser.Email, gottenUser.Password).LastName}";
-            balanceText.Text = $"{con.GetLoggedInUserInfo(gottenUser.Email, gottenUser.Password).Balance}$";
+            var userinfo = con.GetLoggedInUserInfo(gottenUser.Email, gottenUser.Password);
+            NameText.Text = $"{userinfo.FirstName} {userinfo.LastName}";
+            balanceText.Text = $"{userinfo.Balance}$";
         }
     }
 }

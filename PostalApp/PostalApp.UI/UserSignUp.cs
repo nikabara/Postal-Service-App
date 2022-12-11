@@ -40,15 +40,16 @@ namespace PostalApp.UI
                 NameInput.Text.Length < 30 && LastNameInput.Text.Length < 35 && EmailInput.Text.Length > 7 && EmailInput.Text.Length < 50 && EmailInput.Text.Contains('@') && EmailInput.Text.Contains('.') &&
                 PasswordInput.Text.Length > 4 && PasswordInput.Text.Length < 10 && byte.Parse(AgeInput.Text) >= 15 && byte.Parse(AgeInput.Text) <= 120 && Regex.IsMatch(PasswordInput.Text, @"^(?=.*[a-zA-Z])(?=.*[0-9])"))
                 {
-                    var myUser = new Postal.Library.User
+                    Postal.Library.User myUser = new Postal.Library.User
                     {
+                        UserId = connection.GetLoggedInUserInfo(EmailInput.Text, PasswordInput.Text).UserId,
                         FirstName = NameInput.Text,
                         LastName = LastNameInput.Text,
                         Age = byte.Parse(AgeInput.Text),
                         Email = EmailInput.Text,
                         Password = PasswordInput.Text,
                     };
-                    PostaAppWindow mainAppWindow = new PostaAppWindow(myUser);
+
                     if (!connection.GetBasicUser().Any(x => connection.Equal(x, myUser)))
                     {
                         connection.InsertUser(new Postal.Library.User
@@ -60,6 +61,16 @@ namespace PostalApp.UI
                             Password = PasswordInput.Text,
                             Balance = 0
                         });
+                        PostaAppWindow mainAppWindow = new PostaAppWindow(new Postal.Library.User()
+                        {
+                            UserId = connection.GetLoggedInUserInfo(EmailInput.Text, PasswordInput.Text).UserId,
+                            FirstName = NameInput.Text,
+                            LastName = LastNameInput.Text,
+                            Age = byte.Parse(AgeInput.Text),
+                            Email = EmailInput.Text,
+                            Password = PasswordInput.Text,
+                        });
+
                         this.Close();
                         mainAppWindow.Show();
                     }

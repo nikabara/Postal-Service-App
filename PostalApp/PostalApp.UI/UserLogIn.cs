@@ -58,20 +58,20 @@ namespace PostalApp.UI
         }
         public void LogInButton_Click(object sender, EventArgs e)
         {
-            User? ahh = new User
-            {
-                UserId = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).UserId,
-                FirstName = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).FirstName,
-                LastName = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).LastName,
-                Email = LogInEmailInput.Text,
-                Password = LogInPasswordInput.Text
-            };
-            PostaAppWindow mainAppWindow = new PostaAppWindow(ahh);
-
             var gottenUser = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text);
 
             if (gottenUser.Email == LogInEmailInput.Text && gottenUser.Password == LogInPasswordInput.Text)
             {
+                User? ahh = new User
+                {
+                    UserId = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).UserId,
+                    FirstName = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).FirstName,
+                    LastName = sqlDataConnection.GetLoggedInUserInfo(LogInEmailInput.Text, LogInPasswordInput.Text).LastName,
+                    Email = LogInEmailInput.Text,
+                    Password = LogInPasswordInput.Text
+                };
+                PostaAppWindow mainAppWindow = new PostaAppWindow(ahh);
+
                 MessageBox.Show("Sucessfully Logged In","Operation successful", MessageBoxButtons.OK,MessageBoxIcon.None);
                 this.Hide();
                 signUpWindow.Hide();
